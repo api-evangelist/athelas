@@ -1,0 +1,57 @@
+generated: '2026-07-18'
+method: searched
+source: openapi/athelas-enterprise-openapi.yml
+docs:
+- https://athelas.readme.io/docs/authentication
+- https://docs.athelas.com/air_developer/fhir_api/commure_ehr_fhir_api
+summary:
+  types:
+  - http
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+  - clientCredentials
+  - refreshToken
+schemes:
+- name: bearerAuth
+  api: Athelas Enterprise API
+  type: http
+  scheme: bearer
+  description: >-
+    Bearer token for the Athelas Enterprise RPM API. Obtain a token by POSTing email
+    and password to /auth/login (production https://api.athelas.com/enterprise/v1,
+    staging https://staging-api.athelas.com/enterprise/v1). Tokens expire after 60
+    minutes and must be renewed by repeating the login. Sent as
+    Authorization: Bearer <token>.
+  sources:
+  - openapi/athelas-enterprise-openapi.yml
+  docs: https://athelas.readme.io/docs/authentication
+- name: smartOnFhir
+  api: Commure EHR FHIR API
+  type: oauth2
+  description: >-
+    SMART on FHIR v2 (ONC §170.215(a)(3)) using AWS Cognito as the identity provider.
+    Access tokens are sent as Authorization: Bearer <token> on all FHIR requests.
+    Supports standalone launch, EHR launch, and Backend Services (bulk data)
+    authorization. Token endpoint auth methods: none (PKCE), client_secret_post,
+    client_secret_basic, private_key_jwt. PKCE S256 required for public clients.
+    Refresh tokens issued only with offline_access scope; confidential-client tokens
+    valid a minimum of 3 months.
+  issuer: https://cognito-idp.us-east-2.amazonaws.com/us-east-2_KudjXF579
+  jwks_uri: https://cognito-idp.us-east-2.amazonaws.com/us-east-2_KudjXF579/.well-known/jwks.json
+  well_known: https://onc.api.staging-ehr.athelas.com/.well-known/smart-configuration
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://onc.api.staging-ehr.athelas.com/authorize
+    tokenUrl: https://onc.api.staging-ehr.athelas.com/token
+    pkce: S256
+  - flow: clientCredentials
+    tokenUrl: https://onc.api.staging-ehr.athelas.com/token
+    client_assertion: private_key_jwt
+    note: Backend Services Authorization (bulk data / system-level)
+  - flow: refreshToken
+    tokenUrl: https://onc.api.staging-ehr.athelas.com/token
+  introspection_endpoint: https://onc.api.staging-ehr.athelas.com/introspect
+  revocation_endpoint: https://onc.api.staging-ehr.athelas.com/revoke
+  scopes_ref: scopes/athelas-scopes.yml
+  docs: https://docs.athelas.com/air_developer/fhir_api/commure_ehr_fhir_api
