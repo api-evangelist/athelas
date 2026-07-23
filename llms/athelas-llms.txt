@@ -1,0 +1,38 @@
+# Athelas Documentation
+
+> Documentation for Athelas
+
+## Guides
+- [Getting Started with Athelas](https://athelas.readme.io/docs/getting-started.md): This page will help you get started with the Athelas API.
+- [Staging & Production](https://athelas.readme.io/docs/staging-production.md)
+- [Authentication](https://athelas.readme.io/docs/authentication.md)
+- [How the RPM Flow Works](https://athelas.readme.io/docs/how-the-rpm-flow-works.md): Shipping to your first patient!
+- [Test Results Webhook](https://athelas.readme.io/docs/test-results-webhook.md): Test result readings from Athelas devices can be forwarded to you, the client.
+- [Shipping](https://athelas.readme.io/docs/shipping.md): (Drop shipping)
+- [Shipping Status](https://athelas.readme.io/docs/shipping-status.md)
+- [RPM Tests](https://athelas.readme.io/docs/test-types.md): Athelas RPM Patient test types
+- [Test Types](https://athelas.readme.io/docs/test-types-1.md): Athelas RPM Test Type Devices
+- [Test Results](https://athelas.readme.io/docs/test-results.md)
+
+## API Reference
+- [Login](https://athelas.readme.io/reference/login.md): Authenticate to the Athelas API & recieve a Bearer token to perform all future requests. All authorization tokens expire after 60 minutes.  Please note that the demo login info that we have provided here will always yield you the Athelas Demo Token, which can be used on the other sections of this website.
+- [Create](https://athelas.readme.io/reference/create.md): Create patients
+- [Update](https://athelas.readme.io/reference/edit.md): Update patient
+- [Activate](https://athelas.readme.io/reference/activate-1.md): Activate a patient.
+- [Deactivate](https://athelas.readme.io/reference/deactivate.md): Deactivate a patient. This ensures the following will happen: The patient will be removed from all enrollment flows. No further messages will go out to the given patient.
+- [Get](https://athelas.readme.io/reference/get.md): Fetch the patient object
+- [View Test Results](https://athelas.readme.io/reference/view-test-results.md): View all the test results for a given patient. The list is sorted by most recent first.
+- [Verify Address](https://athelas.readme.io/reference/verify-address.md)
+- [Address Verified](https://athelas.readme.io/reference/address-verified.md): Check if the address verification that you queued manually has been successful
+- [Create](https://athelas.readme.io/reference/create-1.md): Create a site object. Sites are associated with a set of patients.
+- [Update](https://athelas.readme.io/reference/edit-1.md): Edit a site object. Sites are associated with a set of patients.
+- [Get](https://athelas.readme.io/reference/get-1.md): Get a site object.
+- [Get Patients](https://athelas.readme.io/reference/get-patients.md): Get a list of patient ids in a site.
+- [Get Prescribers](https://athelas.readme.io/reference/get-prescribers.md): Get a list of prescriber ids in a site.
+- [Create](https://athelas.readme.io/reference/create-2.md): Create a prescriber object. A prescriber is the doctor for a given patient.
+- [Update](https://athelas.readme.io/reference/update-1.md): Create a prescriber object. A prescriber is the doctor for a given patient. At least one site must be created before a prescriber is created; they are associated with sites.
+- [Get](https://athelas.readme.io/reference/get-2.md): Get a prescriber object
+- [Queue RPM Device for Shipment](https://athelas.readme.io/reference/queue-rpm-device-for-shipping.md): This page will help you get started with Test Types.
+
+## Changelog
+- [Welcome to Athelas](https://athelas.readme.io/changelog/welcome-to-athelas.md)

@@ -1,0 +1,73 @@
+openapi: 3.1.0
+info:
+  title: Athelas Enterprise Auth API
+  version: '1.0'
+  description: Athelas Enterprise Remote Patient Monitoring (RPM) API. Manage patients, sites, prescribers, RPM device shipping, and test results. Harvested verbatim from the per-operation OpenAPI blocks published on the Athelas ReadMe developer hub.
+servers:
+- url: https://api.athelas.com/enterprise/v1
+  description: Production
+- url: https://staging-api.athelas.com/enterprise/v1
+  description: Staging
+security:
+- bearerAuth: []
+tags:
+- name: Auth
+paths:
+  /auth/login:
+    post:
+      summary: Login
+      description: 'Authenticate to the Athelas API & recieve a Bearer token to perform all future requests. All authorization tokens expire after 60 minutes.
+
+
+        Please note that the demo login info that we have provided here will always yield you the Athelas Demo Token, which can be used on the other sections of this website.'
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - email
+              - password
+              properties:
+                email:
+                  type: string
+                  description: Email ID of the user attempting login
+                  default: elizabeth.blackwell@getathelas.com
+                password:
+                  type: string
+                  description: Password of the user attempting login
+                  default: LicensedToPracticeNotToKill
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n\t\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5d\"\n}"
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5d
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      tags:
+      - Auth
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token obtained from POST /auth/login. Tokens expire after 60 minutes.

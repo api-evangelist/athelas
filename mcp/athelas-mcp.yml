@@ -1,0 +1,102 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: openapi/athelas-enterprise-openapi.yml
+note: Candidate MCP tool list derived one-per-operation from the harvested Athelas Enterprise OpenAPI.
+  No official hosted/remote Athelas MCP server was found at generation time.
+server:
+  name: athelas-enterprise
+  transport: stdio
+  api: Athelas Enterprise API
+  baseURL: https://api.athelas.com/enterprise/v1
+tools:
+- name: login
+  description: Authenticate and receive a 60-minute Bearer token
+  method: POST
+  path: /auth/login
+  source_operation: openapi/athelas-enterprise-openapi.yml#login
+- name: create
+  description: Create a patient
+  method: POST
+  path: /patients/create
+  source_operation: openapi/athelas-enterprise-openapi.yml#create
+- name: edit
+  description: Update a patient
+  method: POST
+  path: /patients/{id}/update
+  source_operation: openapi/athelas-enterprise-openapi.yml#edit
+- name: activate-1
+  description: Activate a patient
+  method: POST
+  path: /patients/{id}/activate
+  source_operation: openapi/athelas-enterprise-openapi.yml#activate-1
+- name: deactivate
+  description: Deactivate a patient (removes from enrollment flows, stops messages)
+  method: POST
+  path: /patients/{id}/deactivate
+  source_operation: openapi/athelas-enterprise-openapi.yml#deactivate
+- name: get
+  description: Fetch a patient object
+  method: GET
+  path: /patients/{id}
+  source_operation: openapi/athelas-enterprise-openapi.yml#get
+- name: view-test-results
+  description: View all test results for a patient (most recent first)
+  method: GET
+  path: /patients/{id}/test_results
+  source_operation: openapi/athelas-enterprise-openapi.yml#view-test-results
+- name: verify-address
+  description: Queue verification of a patient's shipping address
+  method: POST
+  path: /patients/{id}/verify_address
+  source_operation: openapi/athelas-enterprise-openapi.yml#verify-address
+- name: address-verified
+  description: Check whether a queued address verification succeeded
+  method: GET
+  path: /patients/{id}/address_verified
+  source_operation: openapi/athelas-enterprise-openapi.yml#address-verified
+- name: create-1
+  description: Create a site (a set of patients)
+  method: POST
+  path: /sites/create
+  source_operation: openapi/athelas-enterprise-openapi.yml#create-1
+- name: edit-1
+  description: Edit a site
+  method: POST
+  path: /sites/{id}/update
+  source_operation: openapi/athelas-enterprise-openapi.yml#edit-1
+- name: get-1
+  description: Get a site object
+  method: GET
+  path: /sites/{id}
+  source_operation: openapi/athelas-enterprise-openapi.yml#get-1
+- name: get-patients
+  description: Get patient ids in a site
+  method: GET
+  path: /sites/{id}/patients
+  source_operation: openapi/athelas-enterprise-openapi.yml#get-patients
+- name: get-prescribers
+  description: Get prescriber ids in a site
+  method: GET
+  path: /sites/{id}/prescribers
+  source_operation: openapi/athelas-enterprise-openapi.yml#get-prescribers
+- name: create-2
+  description: Create a prescriber (the doctor for a patient)
+  method: POST
+  path: /prescribers/create
+  source_operation: openapi/athelas-enterprise-openapi.yml#create-2
+- name: update-1
+  description: Update a prescriber
+  method: POST
+  path: /prescribers/{id}/update
+  source_operation: openapi/athelas-enterprise-openapi.yml#update-1
+- name: get-2
+  description: Get a prescriber object
+  method: GET
+  path: /prescribers/{id}
+  source_operation: openapi/athelas-enterprise-openapi.yml#get-2
+- name: queue-rpm-device-for-shipping
+  description: Queue an RPM device for drop shipment to a patient
+  method: POST
+  path: /test_types/{id}/ship_rpm_device
+  source_operation: openapi/athelas-enterprise-openapi.yml#queue-rpm-device-for-shipping

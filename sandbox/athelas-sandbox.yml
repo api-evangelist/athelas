@@ -1,0 +1,33 @@
+generated: '2026-07-18'
+method: searched
+source:
+- https://athelas.readme.io/docs/staging-production
+- https://athelas.readme.io/reference/login
+- https://docs.athelas.com/air_developer/fhir_api/commure_ehr_fhir_api
+note: >-
+  Test-vs-live separation for both APIs. Values below are published verbatim in the
+  Athelas docs (the demo login credentials are the provider's own published demo
+  account that yields the "Athelas Demo Token"). No values invented.
+enterprise_api:
+  staging_base_url: https://staging-api.athelas.com/enterprise/v1
+  production_base_url: https://api.athelas.com/enterprise/v1
+  separation: separate staging vs production database instances
+  demo_login:
+    endpoint: /auth/login
+    email: elizabeth.blackwell@getathelas.com
+    password: LicensedToPracticeNotToKill
+    yields: Athelas Demo Token (usable across the reference/API-explorer sections)
+  webhook_test_data:
+    note: The Test Results Webhook docs publish example payloads with test patient_id 1234567.
+    source: asyncapi/athelas-webhooks.yml
+fhir_api:
+  sandbox_base_url: https://onc.api.staging-ehr.athelas.com
+  fees: No registration, sandbox, or production fees apply.
+  registration: Apps are registered in AWS Cognito (contact Commure d/b/a Athelas; self-serve planned).
+  conformance_testing:
+    tool: ONC Inferno (g)(10) Standardized API test kit
+    url: https://inferno.healthit.gov/
+    suites: [US Core Conformance, SMART App Launch v2.0, Bulk Data v2.0]
+  discovery:
+    smart_configuration: https://onc.api.staging-ehr.athelas.com/.well-known/smart-configuration
+    capability_statement: https://onc.api.staging-ehr.athelas.com/metadata

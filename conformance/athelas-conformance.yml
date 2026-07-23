@@ -1,0 +1,63 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.athelas.com/air_developer/fhir_api/commure_ehr_fhir_api
+note: >-
+  Standards conformance for the Commure EHR FHIR API (ONC-certified) and the Athelas
+  Enterprise RPM API. FHIR/ONC/SMART claims are published in the FHIR API reference
+  and the ONC Mandatory Disclosure; RPM API claims are derived from its OpenAPI.
+standards:
+- id: fhir-r4b
+  conforms: true
+  evidence: FHIR R4B server, fhirVersion 4.0.1, application/fhir+json
+  api: Commure EHR FHIR API
+- id: us-core-6.1.0
+  conforms: true
+  evidence: US Core 6.1.0 profiles (hl7.fhir.us.core|6.1.0) declared in CapabilityStatement
+  api: Commure EHR FHIR API
+- id: onc-g10-standardized-api
+  conforms: true
+  evidence: ONC (g)(10) Standardized API certification criteria §170.315(g)(10)
+  api: Commure EHR FHIR API
+- id: smart-app-launch-v2
+  conforms: true
+  evidence: SMART on FHIR v2 (§170.215(a)(3)); /.well-known/smart-configuration advertised
+  api: Commure EHR FHIR API
+- id: smart-backend-services
+  conforms: true
+  evidence: Backend Services Authorization (client_credentials + private_key_jwt, system/*.rs)
+  api: Commure EHR FHIR API
+- id: fhir-bulk-data-v2
+  conforms: true
+  evidence: Bulk Data v2.0 export validated via ONC Inferno test kit
+  api: Commure EHR FHIR API
+- id: oauth2
+  conforms: true
+  evidence: OAuth2 authorization_code / client_credentials / refresh_token via AWS Cognito
+  api: Commure EHR FHIR API
+- id: oidc
+  conforms: true
+  evidence: OpenID Connect (openid, fhirUser, sso-openid-connect capability)
+  api: Commure EHR FHIR API
+- id: pkce
+  conforms: true
+  evidence: code_challenge_methods_supported S256; PKCE required for public clients
+  api: Commure EHR FHIR API
+- id: uscdi
+  conforms: true
+  evidence: Resource-to-USCDI mapping matrix; EHI Export §170.315(b)(10)
+  api: Commure EHR FHIR API
+- id: bearer-token-auth
+  conforms: true
+  evidence: 'Authorization: Bearer tokens on all RPM API requests'
+  api: Athelas Enterprise API
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: RPM API returns application/json error bodies, not application/problem+json
+  api: Athelas Enterprise API
+compliance:
+- program: ONC Health IT Certification (g)(10)
+  published: true
+  url: https://docs.athelas.com/air_developer/onc_certification/mandatory_disclosure
+- program: HIPAA (protected health information; healthcare provider platform)
+  published: true
+  url: https://www.athelas.com/legal/privacy-policy-current

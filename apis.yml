@@ -1,8 +1,17 @@
 aid: athelas
 name: Athelas
-description: 'Athelas is a company surfaced as a portfolio company of general-catalyst, initialized-capital
-  and added to the API Evangelist network as a stub for enrichment. Sector: healthcare. This profile is
-  a lead awaiting the enrichment pipeline.'
+description: >-
+  Athelas (Commure d/b/a Athelas) is a healthcare technology company building AI-powered
+  infrastructure for provider organizations, spanning remote patient monitoring (RPM),
+  an AI-native EHR ("Air"), ambient AI scribing, and revenue cycle management (RCM /
+  "Insights"). Its developer surface exposes two public APIs: the Athelas Enterprise
+  RPM API (Bearer-token REST over api.athelas.com/enterprise/v1) for enrolling patients,
+  managing sites and prescribers, shipping cellular-connected monitoring devices, and
+  streaming device test results via webhook; and the Commure EHR FHIR API, an ONC
+  (g)(10)-certified, US Core 6.1.0-compliant FHIR R4B server secured with SMART on FHIR
+  v2 / OAuth2 for third-party app integrations with Air. Backed by General Catalyst and
+  Initialized Capital; Athelas and Commure merged to form a multi-billion-dollar
+  healthcare infrastructure company.
 url: https://raw.githubusercontent.com/api-evangelist/athelas/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,13 +20,144 @@ x-backed-by:
 - initialized-capital
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://www.athelas.com/favicon.ico
 tags:
 - Company
 - Healthcare
-apis: []
+- Remote Patient Monitoring
+- Electronic Health Records
+- FHIR
+- Revenue Cycle Management
+- Medical Devices
+- SMART on FHIR
+- Interoperability
+- AI
+apis:
+- name: Commure EHR FHIR API
+  description: >-
+    ONC (g)(10)-certified, US Core 6.1.0-compliant FHIR R4B server exposing patient health data from Air
+    to authorized third-party apps. Secured with SMART on FHIR v2 / OAuth2 (AWS Cognito), supporting standalone
+    launch, EHR launch, and backend services (bulk data) authorization. All responses are application/fhir+json.
+  humanURL: https://docs.athelas.com/air_developer/fhir_api/commure_ehr_fhir_api
+  baseURL: https://onc.api.staging-ehr.athelas.com
+  tags:
+  - FHIR
+  - SMART on FHIR
+  - Electronic Health Records
+  - Interoperability
+  - ONC Certification
+  properties:
+  - type: Documentation
+    url: https://docs.athelas.com/air_developer/fhir_api/commure_ehr_fhir_api
+  - type: OAuthScopes
+    url: scopes/athelas-scopes.yml
+  - type: Conformance
+    url: conformance/athelas-conformance.yml
+- aid: athelas:athelas-auth-api
+  name: Athelas Auth API
+  description: The Auth API from Athelas — 1 operation(s) for auth.
+  humanURL: https://athelas.readme.io/
+  baseURL: https://api.athelas.com/enterprise/v1
+  tags:
+  - Auth
+  properties:
+  - type: OpenAPI
+    url: openapi/athelas-auth-api-openapi.yml
+  - type: Documentation
+    url: https://athelas.readme.io/docs/getting-started
+  - type: APIReference
+    url: https://athelas.readme.io/reference/login
+  - type: Authentication
+    url: https://athelas.readme.io/docs/authentication
+  - type: Webhooks
+    url: asyncapi/athelas-webhooks.yml
+- aid: athelas:athelas-patients-api
+  name: Athelas Patients API
+  description: The Patients API from Athelas — 8 operation(s) for patients.
+  humanURL: https://athelas.readme.io/
+  baseURL: https://api.athelas.com/enterprise/v1
+  tags:
+  - Patients
+  properties:
+  - type: OpenAPI
+    url: openapi/athelas-patients-api-openapi.yml
+  - type: Documentation
+    url: https://athelas.readme.io/docs/getting-started
+  - type: APIReference
+    url: https://athelas.readme.io/reference/login
+  - type: Authentication
+    url: https://athelas.readme.io/docs/authentication
+  - type: Webhooks
+    url: asyncapi/athelas-webhooks.yml
+- aid: athelas:athelas-prescribers-api
+  name: Athelas Prescribers API
+  description: The Prescribers API from Athelas — 3 operation(s) for prescribers.
+  humanURL: https://athelas.readme.io/
+  baseURL: https://api.athelas.com/enterprise/v1
+  tags:
+  - Prescribers
+  properties:
+  - type: OpenAPI
+    url: openapi/athelas-prescribers-api-openapi.yml
+  - type: Documentation
+    url: https://athelas.readme.io/docs/getting-started
+  - type: APIReference
+    url: https://athelas.readme.io/reference/login
+  - type: Authentication
+    url: https://athelas.readme.io/docs/authentication
+  - type: Webhooks
+    url: asyncapi/athelas-webhooks.yml
+- aid: athelas:athelas-sites-api
+  name: Athelas Sites API
+  description: The Sites API from Athelas — 5 operation(s) for sites.
+  humanURL: https://athelas.readme.io/
+  baseURL: https://api.athelas.com/enterprise/v1
+  tags:
+  - Sites
+  properties:
+  - type: OpenAPI
+    url: openapi/athelas-sites-api-openapi.yml
+  - type: Documentation
+    url: https://athelas.readme.io/docs/getting-started
+  - type: APIReference
+    url: https://athelas.readme.io/reference/login
+  - type: Authentication
+    url: https://athelas.readme.io/docs/authentication
+  - type: Webhooks
+    url: asyncapi/athelas-webhooks.yml
+- aid: athelas:athelas-test-types-api
+  name: Athelas Test Types API
+  description: The Test Types API from Athelas — 1 operation(s) for test types.
+  humanURL: https://athelas.readme.io/
+  baseURL: https://api.athelas.com/enterprise/v1
+  tags:
+  - Test Types
+  properties:
+  - type: OpenAPI
+    url: openapi/athelas-test-types-api-openapi.yml
+  - type: Documentation
+    url: https://athelas.readme.io/docs/getting-started
+  - type: APIReference
+    url: https://athelas.readme.io/reference/login
+  - type: Authentication
+    url: https://athelas.readme.io/docs/authentication
+  - type: Webhooks
+    url: asyncapi/athelas-webhooks.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -26,3 +166,62 @@ maintainers:
 common:
 - type: Website
   url: https://athelas.com/
+- type: DeveloperPortal
+  url: https://athelas.readme.io/
+- type: Documentation
+  url: https://docs.athelas.com/
+- type: APIReference
+  url: https://athelas.readme.io/reference/login
+- type: GettingStarted
+  url: https://athelas.readme.io/docs/getting-started
+- type: Authentication
+  url: authentication/athelas-authentication.yml
+- type: OAuthScopes
+  url: scopes/athelas-scopes.yml
+- type: ChangeLog
+  url: changelog/athelas-changelog.yml
+- type: StatusPage
+  url: https://status.athelas.com/
+- type: Webhooks
+  url: asyncapi/athelas-webhooks.yml
+- type: MCPServer
+  url: mcp/athelas-mcp.yml
+- type: LLMsTxt
+  url: llms/athelas-llms.txt
+- type: WellKnown
+  url: well-known/athelas-well-known.yml
+- type: Conformance
+  url: conformance/athelas-conformance.yml
+- type: Compliance
+  url: https://docs.athelas.com/air_developer/onc_certification/mandatory_disclosure
+- type: ErrorCatalog
+  url: errors/athelas-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/athelas-lifecycle.yml
+- type: Conventions
+  url: conventions/athelas-conventions.yml
+- type: DataModel
+  url: data-model/athelas-data-model.yml
+- type: Sandbox
+  url: sandbox/athelas-sandbox.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: AgenticAccess
+  url: agentic-access/athelas-agentic-access.yml
+- type: Overlay
+  url: overlays/athelas-enterprise-overlay.yaml
+- type: DomainSecurity
+  url: security/athelas-domain-security.yml
+- type: TermsOfService
+  url: https://www.athelas.com/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.athelas.com/legal/privacy-policy-current
+- type: Blog
+  url: https://www.athelas.com/tbh
+- type: Support
+  url: https://athelas.readme.io/discuss
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

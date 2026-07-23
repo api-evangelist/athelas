@@ -1,0 +1,14 @@
+{
+  "repo": "athelas",
+  "feeds": [
+    {
+      "source": "https://www.athelas.com/legal/privacy-policy-current",
+      "feed_url": "https://www.athelas.com/legal/privacy-policy-current",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-07-20T13:31:34Z"
+}

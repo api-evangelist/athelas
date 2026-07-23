@@ -1,0 +1,314 @@
+openapi: 3.1.0
+info:
+  title: Athelas Enterprise Auth Sites API
+  version: '1.0'
+  description: Athelas Enterprise Remote Patient Monitoring (RPM) API. Manage patients, sites, prescribers, RPM device shipping, and test results. Harvested verbatim from the per-operation OpenAPI blocks published on the Athelas ReadMe developer hub.
+servers:
+- url: https://api.athelas.com/enterprise/v1
+  description: Production
+- url: https://staging-api.athelas.com/enterprise/v1
+  description: Staging
+security:
+- bearerAuth: []
+tags:
+- name: Sites
+paths:
+  /sites/create:
+    post:
+      summary: Create
+      description: Create a site object. Sites are associated with a set of patients.
+      operationId: create-1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - name
+              - address
+              - active
+              - user_id
+              - organization_id
+              properties:
+                name:
+                  type: string
+                  description: The site's name
+                  default: Valley Clinic
+                address:
+                  type: string
+                  description: The site's address
+                  default: 160 S Whisman Rd, Mountain View, 94041
+                active:
+                  type: boolean
+                  description: Whether or not the site is to be set to active (can be updated later)
+                  default: true
+                user_id:
+                  type: integer
+                  description: ID of the user that will effectively own the site
+                  default: 1
+                  format: int32
+                organization_id:
+                  type: integer
+                  description: ID of the Organization that this site will belong to (usually provided by Athelas Internal)
+                  default: 1
+                  format: int32
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n   \"id\": 43,\n   \"name\": \"Valley Clinic\",\n   \"address\": \"160 S Whisman Rd, Mountain View, 94041\",\n   \"active\": true\n}\n"
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 43
+                    default: 0
+                  name:
+                    type: string
+                    example: Valley Clinic
+                  address:
+                    type: string
+                    example: 160 S Whisman Rd, Mountain View, 94041
+                  active:
+                    type: boolean
+                    example: true
+                    default: true
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      tags:
+      - Sites
+  /sites/{id}/update:
+    post:
+      summary: Update
+      description: Edit a site object. Sites are associated with a set of patients.
+      operationId: edit-1
+      parameters:
+      - name: id
+        in: path
+        description: ID of the site to update
+        schema:
+          type: string
+          default: '43'
+        required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The site's name
+                  default: Valley Clinic Two
+                address:
+                  type: string
+                  description: The site's address
+                  default: 160 S Whisman Rd, Mountain View, 94041
+                active:
+                  type: boolean
+                  description: Whether or not the site is to be set to active (can be updated later)
+                  default: false
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n   \"id\": 43,\n   \"name\": \"Valley Clinic Two\",\n   \"address\": \"160 S Whisman Rd, Mountain View, 94041\",\n   \"active\": true\n}\n"
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 43
+                    default: 0
+                  name:
+                    type: string
+                    example: Valley Clinic Two
+                  address:
+                    type: string
+                    example: 160 S Whisman Rd, Mountain View, 94041
+                  active:
+                    type: boolean
+                    example: true
+                    default: true
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      tags:
+      - Sites
+  /sites/{id}:
+    get:
+      summary: Get
+      description: Get a site object.
+      operationId: get-1
+      parameters:
+      - name: id
+        in: path
+        description: ID of the site requested
+        schema:
+          type: string
+          default: '43'
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n   \"id\": 43,\n   \"name\": \"Valley Clinic\",\n   \"address\": \"160 S Whisman Rd, Mountain View, 94041\",\n   \"active\": true\n}\n"
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 43
+                    default: 0
+                  name:
+                    type: string
+                    example: Valley Clinic
+                  address:
+                    type: string
+                    example: 160 S Whisman Rd, Mountain View, 94041
+                  active:
+                    type: boolean
+                    example: true
+                    default: true
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      tags:
+      - Sites
+  /sites/{id}/patients:
+    get:
+      summary: Get Patients
+      description: Get a list of patient ids in a site.
+      operationId: get-patients
+      parameters:
+      - name: id
+        in: path
+        description: ID of the site to get all patient ids from
+        schema:
+          type: integer
+          format: int32
+          default: 20
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n   \"site_id\": 20,\n   \"patient_ids\": [\n       23,\n       25,\n       12\n   ]\n}"
+              schema:
+                type: object
+                properties:
+                  site_id:
+                    type: integer
+                    example: 20
+                    default: 0
+                  patient_ids:
+                    type: array
+                    items:
+                      type: integer
+                      example: 23
+                      default: 0
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      tags:
+      - Sites
+  /sites/{id}/prescribers:
+    get:
+      summary: Get Prescribers
+      description: Get a list of prescriber ids in a site.
+      operationId: get-prescribers
+      parameters:
+      - name: id
+        in: path
+        description: ID of the site to get prescribers for
+        schema:
+          type: integer
+          format: int32
+          default: 20
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n   \"site_id\": 20,\n   \"prescriber_ids\": [\n       125,\n       342,\n       121\n   ]\n}"
+              schema:
+                type: object
+                properties:
+                  site_id:
+                    type: integer
+                    example: 20
+                    default: 0
+                  prescriber_ids:
+                    type: array
+                    items:
+                      type: integer
+                      example: 125
+                      default: 0
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      tags:
+      - Sites
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token obtained from POST /auth/login. Tokens expire after 60 minutes.

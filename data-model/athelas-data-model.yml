@@ -1,0 +1,59 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/athelas-enterprise-openapi.yml
+note: >-
+  Entity-relationship graph derived from the Athelas Enterprise API operations and
+  path/id references (site_ids on test results, site-scoped patient/prescriber lists,
+  prescriber-belongs-to-site). The FHIR API's data model is the standard US Core 6.1.0
+  resource set (Patient, Observation, Condition, MedicationRequest, ...) — see
+  scopes/athelas-scopes.yml for the exposed resources.
+entities:
+- name: Patient
+  id_field: id
+  description: An enrolled remote-monitoring patient.
+  operations: [create, edit, get, activate-1, deactivate, verify-address, address-verified, view-test-results]
+- name: Site
+  id_field: id
+  description: A grouping that a set of patients and prescribers is associated with.
+  operations: [create-1, edit-1, get-1, get-patients, get-prescribers]
+- name: Prescriber
+  id_field: id
+  description: The doctor for a given patient; must be associated with at least one site.
+  operations: [create-2, update-1, get-2]
+- name: TestResult
+  id_field: blood_pressure_test_id | weight_test_id | glucose_test_id
+  description: A device reading (blood pressure/heart rate, weight, or glucose).
+  operations: [view-test-results]
+- name: RPMDevice
+  id_field: test_type id
+  description: A cellular-connected RPM device queued for drop shipment to a patient.
+  operations: [queue-rpm-device-for-shipping]
+relationships:
+- from: Patient
+  to: Site
+  type: belongs_to
+  via: site_ids
+- from: Prescriber
+  to: Site
+  type: belongs_to
+  via: site (association)
+- from: Site
+  to: Patient
+  type: has_many
+  via: get-patients
+- from: Site
+  to: Prescriber
+  type: has_many
+  via: get-prescribers
+- from: Patient
+  to: TestResult
+  type: has_many
+  via: view-test-results
+- from: TestResult
+  to: Site
+  type: belongs_to
+  via: site_ids
+- from: Patient
+  to: RPMDevice
+  type: has_many
+  via: queue-rpm-device-for-shipping

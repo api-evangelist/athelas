@@ -1,0 +1,35 @@
+generated: '2026-07-18'
+method: searched
+source: https://athelas.readme.io/docs/staging-production
+note: >-
+  Lifecycle posture across the two Athelas developer surfaces. No formal deprecation
+  policy or Sunset/Deprecation (RFC 8594) header support was found published at
+  enrichment time.
+apis:
+- api: Athelas Enterprise API
+  versioning:
+    scheme: uri-path
+    current: v1
+    base_path: /enterprise/v1
+    docs: https://athelas.readme.io/docs/authentication
+  environments:
+    staging: https://staging-api.athelas.com/enterprise/v1
+    production: https://api.athelas.com/enterprise/v1
+    docs: https://athelas.readme.io/docs/staging-production
+  token_lifetime: 60 minutes
+- api: Commure EHR FHIR API
+  versioning:
+    scheme: fhir-version
+    current: R4B
+    fhir_version: 4.0.1
+    us_core: 6.1.0
+    docs: https://docs.athelas.com/air_developer/fhir_api/commure_ehr_fhir_api
+  environments:
+    staging: https://onc.api.staging-ehr.athelas.com
+  onc_disclosure: https://docs.athelas.com/air_developer/onc_certification/mandatory_disclosure
+status_page: https://status.athelas.com/
+changelog: https://athelas.readme.io/changelog
+deprecation:
+  policy_url: null
+  sunset_header: false
+deprecated_operations: []

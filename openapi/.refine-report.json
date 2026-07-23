@@ -1,0 +1,22 @@
+{
+  "provider": "athelas",
+  "sources": [
+    "athelas-auth-api-openapi.yml",
+    "athelas-patients-api-openapi.yml",
+    "athelas-prescribers-api-openapi.yml",
+    "athelas-sites-api-openapi.yml",
+    "athelas-test-types-api-openapi.yml"
+  ],
+  "outputs": [
+    "athelas-auth-api-openapi.yml",
+    "athelas-patients-api-openapi.yml",
+    "athelas-prescribers-api-openapi.yml",
+    "athelas-sites-api-openapi.yml",
+    "athelas-test-types-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

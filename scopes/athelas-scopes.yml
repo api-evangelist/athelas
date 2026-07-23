@@ -1,0 +1,111 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.athelas.com/air_developer/fhir_api/commure_ehr_fhir_api
+docs: https://docs.athelas.com/air_developer/fhir_api/commure_ehr_fhir_api
+api: Commure EHR FHIR API
+note: >-
+  SMART on FHIR v2 granular scopes. All resource scopes use the .rs (read-search)
+  action. Advertised in the server's /.well-known/smart-configuration document.
+schemes:
+- name: smartOnFhir
+  source: docs.athelas.com FHIR API reference
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://onc.api.staging-ehr.athelas.com/authorize
+    tokenUrl: https://onc.api.staging-ehr.athelas.com/token
+  - flow: clientCredentials
+    tokenUrl: https://onc.api.staging-ehr.athelas.com/token
+scopes:
+- scope: openid
+  description: OpenID Connect
+  group: context
+- scope: profile
+  description: User profile
+  group: context
+- scope: fhirUser
+  description: Resolves the current user as a FHIR resource
+  group: context
+- scope: offline_access
+  description: Issue a refresh token
+  group: context
+- scope: launch
+  description: EHR launch context
+  group: context
+- scope: launch/patient
+  description: Standalone patient launch context
+  group: context
+- scope: patient/AllergyIntolerance.rs
+  description: Allergy and intolerance records
+  group: patient
+- scope: patient/CarePlan.rs
+  description: Care plans
+  group: patient
+- scope: patient/CareTeam.rs
+  description: Care team members
+  group: patient
+- scope: patient/Condition.rs
+  description: All conditions (problems, diagnoses, health concerns)
+  group: patient
+- scope: patient/Coverage.rs
+  description: Insurance coverage
+  group: patient
+- scope: patient/Device.rs
+  description: Implantable devices
+  group: patient
+- scope: patient/DiagnosticReport.rs
+  description: Diagnostic reports (lab, notes)
+  group: patient
+- scope: patient/DocumentReference.rs
+  description: Clinical documents and chart notes
+  group: patient
+- scope: patient/Encounter.rs
+  description: Encounters and visits
+  group: patient
+- scope: patient/Goal.rs
+  description: Health goals
+  group: patient
+- scope: patient/Immunization.rs
+  description: Immunization records
+  group: patient
+- scope: patient/Location.rs
+  description: Practice locations
+  group: patient
+- scope: patient/MedicationDispense.rs
+  description: Medication dispense records
+  group: patient
+- scope: patient/MedicationRequest.rs
+  description: Medication requests and prescriptions
+  group: patient
+- scope: patient/Observation.rs
+  description: All observations (vitals, labs, surveys, SDOH)
+  group: patient
+- scope: patient/Organization.rs
+  description: Organizations
+  group: patient
+- scope: patient/Patient.rs
+  description: Patient demographics
+  group: patient
+- scope: patient/Practitioner.rs
+  description: Practitioners
+  group: patient
+- scope: patient/PractitionerRole.rs
+  description: Practitioner roles
+  group: patient
+- scope: patient/Procedure.rs
+  description: Procedures
+  group: patient
+- scope: patient/Provenance.rs
+  description: Provenance (data source/attribution) records
+  group: patient
+- scope: patient/RelatedPerson.rs
+  description: Related persons
+  group: patient
+- scope: patient/ServiceRequest.rs
+  description: Service requests
+  group: patient
+- scope: patient/Specimen.rs
+  description: Specimens
+  group: patient
+- scope: system/*.rs
+  description: System-level read-search across all resources (Backend Services / bulk data)
+  group: system

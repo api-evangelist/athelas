@@ -1,0 +1,62 @@
+generated: '2026-07-18'
+method: searched
+source: https://athelas.readme.io/docs/test-results-webhook
+spec_type: Webhooks
+api: Athelas Enterprise API
+note: >-
+  Athelas forwards RPM device test-result readings to enterprise clients via an
+  outbound webhook. Onboarding is manual — the client provides a receiving URL to
+  aki@athelas.com and Athelas returns a Bearer token used to verify all forwarded
+  results. Payloads carry the raw reading plus derived fields (percentile change,
+  ISO test time). Below are the published payload shapes, verbatim.
+delivery:
+  direction: outbound (Athelas -> client)
+  auth: Bearer token issued to the client for verifying forwarded results
+  onboarding_contact: aki@athelas.com
+events:
+- name: blood_pressure_heart_rate.result
+  test_type: BLOOD_PRESSURE/HEART_RATE
+  description: >-
+    Blood pressure cuffs also serve as heart rate sensors; systolic/diastolic (mmHg)
+    and heart rate (bpm) are bundled into one report.
+  example:
+    patient_id: 1234567
+    patient: Test Tester
+    errors: None
+    percentile_change: 0.6
+    prescriber_full_name: Elizabeth Blackwell
+    test_time: '2022-01-08T02:17:09.075230'
+    site_ids: [153]
+    blood_pressure_test_id: 54550
+    test_type: BLOOD_PRESSURE/HEART_RATE
+    systolic: 132
+    diastolic: 65
+    bpm: 15
+- name: weight.result
+  test_type: WEIGHT
+  description: Athelas weight scales report measurements in pounds (lbs).
+  example:
+    patient_id: 1234567
+    patient: Test Tester
+    errors: None
+    percentile_change: 0.6
+    prescriber_full_name: Elizabeth Blackwell
+    test_time: '2022-01-08T02:17:09.075230'
+    site_ids: [153]
+    weight_test_id: 12351
+    test_type: WEIGHT
+    weight: 168
+- name: glucose.result
+  test_type: GLUCOSE
+  description: Athelas glucometers report glucose values in mmol/L.
+  example:
+    patient_id: 1234567
+    patient: Test Tester
+    errors: None
+    percentile_change: 0.6
+    prescriber_full_name: Elizabeth Blackwell
+    test_time: '2022-01-08T02:17:09.075230'
+    site_ids: [153]
+    glucose_test_id: 34535
+    test_type: GLUCOSE
+    glucose: 40

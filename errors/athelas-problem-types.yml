@@ -1,0 +1,30 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/athelas-enterprise-openapi.yml
+format: json
+note: >-
+  Derived from the harvested Athelas Enterprise OpenAPI. The RPM API returns
+  application/json error bodies (not RFC 9457 application/problem+json). Response
+  descriptions in the published spec are HTTP-code placeholders; titles/remediation
+  below are inferred from operation semantics. Every write and read operation
+  documents a 400 response; the login operation additionally documents a 300.
+envelope:
+  content_type: application/json
+  problem_details: false
+problems:
+- status: 400
+  title: Bad Request
+  description: >-
+    Malformed or invalid request — missing required fields, invalid patient/site/
+    prescriber id, or a business-rule violation (e.g. creating a prescriber before
+    any site exists). Documented on all 18 operations.
+  remediation: Validate required fields and referenced ids; ensure prerequisite objects (sites) exist before creating dependents (prescribers).
+  applies_to: all operations
+- status: 300
+  title: Multiple Choices
+  description: Returned by the login operation for an ambiguous authentication outcome.
+  remediation: Confirm the login email/password and target instance (staging vs production).
+  source_operation: openapi/athelas-enterprise-openapi.yml#login
+auth_note: >-
+  401/403 are not enumerated in the published spec, but expired (60-minute) or
+  missing Bearer tokens will be rejected — re-authenticate via /auth/login.

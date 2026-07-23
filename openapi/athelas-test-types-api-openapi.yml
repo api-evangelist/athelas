@@ -1,0 +1,59 @@
+openapi: 3.1.0
+info:
+  title: Athelas Enterprise Auth Test Types API
+  version: '1.0'
+  description: Athelas Enterprise Remote Patient Monitoring (RPM) API. Manage patients, sites, prescribers, RPM device shipping, and test results. Harvested verbatim from the per-operation OpenAPI blocks published on the Athelas ReadMe developer hub.
+servers:
+- url: https://api.athelas.com/enterprise/v1
+  description: Production
+- url: https://staging-api.athelas.com/enterprise/v1
+  description: Staging
+security:
+- bearerAuth: []
+tags:
+- name: Test Types
+paths:
+  /test_types/{id}/ship_rpm_device:
+    post:
+      summary: Queue RPM Device for Shipment
+      description: This page will help you get started with Test Types.
+      operationId: queue-rpm-device-for-shipping
+      parameters:
+      - name: id
+        in: path
+        description: Patient ID
+        schema:
+          type: integer
+          format: int32
+          default: 524
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: ''
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n\t\"message\": \"Address not verified for this patient. Please verify address successfully before queueing shipping.\"\n}"
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Address not verified for this patient. Please verify address successfully before queueing shipping.
+      deprecated: false
+      tags:
+      - Test Types
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token obtained from POST /auth/login. Tokens expire after 60 minutes.

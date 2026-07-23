@@ -1,0 +1,16 @@
+generated: '2026-07-18'
+method: generated
+source: openapi/athelas-enterprise-openapi.yml
+note: >-
+  Agent Skills generated from the harvested Athelas Enterprise OpenAPI; every step is
+  grounded in a real operationId verified against the spec. No provider-published
+  AGENTS.md / skill files were found.
+skills:
+- file: athelas-enroll-rpm-patient.md
+  name: Enroll an RPM patient and ship a device
+  api: openapi/athelas-enterprise-openapi.yml
+  operations: [login, create-1, create-2, create, verify-address, address-verified, queue-rpm-device-for-shipping]
+- file: athelas-read-patient-test-results.md
+  name: Read a patient's RPM test results
+  api: openapi/athelas-enterprise-openapi.yml
+  operations: [login, get-1, get-patients, get, view-test-results]

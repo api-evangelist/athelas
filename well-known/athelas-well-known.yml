@@ -1,0 +1,33 @@
+generated: '2026-07-18'
+method: searched
+note: >-
+  Live /.well-known/ probes against api.athelas.com, athelas.com and www.athelas.com
+  returned 404 (no published discovery documents on the marketing/RPM hosts). The
+  Commure EHR FHIR API documents a SMART App Launch v2.0 discovery document at
+  onc.api.staging-ehr.athelas.com/.well-known/smart-configuration; the staging host
+  did not serve it unauthenticated at probe time, so the document is captured verbatim
+  from the published FHIR API reference (not a live 200).
+hosts:
+- host: https://onc.api.staging-ehr.athelas.com
+  documents:
+  - path: /.well-known/smart-configuration
+    status: documented
+    source: https://docs.athelas.com/air_developer/fhir_api/commure_ehr_fhir_api
+    file: athelas-smart-configuration.json
+    spec: SMART App Launch v2.0
+- host: https://api.athelas.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+- host: https://athelas.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+- host: https://www.athelas.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404

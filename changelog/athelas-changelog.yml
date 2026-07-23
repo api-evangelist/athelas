@@ -1,0 +1,14 @@
+generated: '2026-07-18'
+method: searched
+source: https://athelas.readme.io/changelog
+note: >-
+  The Athelas ReadMe developer hub exposes a Changelog section. At enrichment time it
+  published a single introductory entry; the Commure/Air EHR docs are versioned via
+  the ONC certification disclosures rather than a dated developer changelog.
+scheme: readme-changelog
+current_version: v1
+entries:
+- title: Welcome to Athelas
+  url: https://athelas.readme.io/changelog/welcome-to-athelas
+  summary: Introduction of the Athelas developer hub and documentation.
+  breaking: false

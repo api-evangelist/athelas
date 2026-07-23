@@ -1,0 +1,47 @@
+generated: '2026-07-18'
+method: searched
+source:
+- https://athelas.readme.io/docs/authentication
+- https://docs.athelas.com/air_developer/fhir_api/commure_ehr_fhir_api
+note: >-
+  Cross-cutting request/response semantics, searched from the Athelas developer docs
+  and derived from the harvested OpenAPI. No idempotency-key contract or documented
+  pagination scheme was found for the RPM API at enrichment time — omitted rather
+  than fabricated.
+authentication:
+  enterprise_api:
+    style: bearer
+    header: 'Authorization: Bearer <token>'
+    token_endpoint: /auth/login
+    token_lifetime: 60 minutes
+  fhir_api:
+    style: oauth2 / SMART on FHIR v2
+    header: 'Authorization: Bearer <token>'
+    idp: AWS Cognito
+    grant_types: [authorization_code, client_credentials, refresh_token]
+idempotency:
+  supported: false
+  note: No idempotency-key header/parameter documented for either API.
+pagination:
+  enterprise_api:
+    documented: false
+    note: List operations (e.g. test results) return arrays sorted most-recent-first; no cursor/offset params documented.
+  fhir_api:
+    style: fhir-bundle
+    note: FHIR search returns Bundle resources with standard FHIR paging links (_count, next).
+content_types:
+  enterprise_api: application/json
+  fhir_api: application/fhir+json
+error_envelope:
+  enterprise_api: application/json (see errors/athelas-problem-types.yml)
+  fhir_api: FHIR OperationOutcome
+versioning:
+  enterprise_api: uri-path (/enterprise/v1)
+  fhir_api: FHIR R4B (4.0.1)
+rate_limit_signal:
+  documented: false
+cross_reference:
+  errors: errors/athelas-problem-types.yml
+  lifecycle: lifecycle/athelas-lifecycle.yml
+  authentication: authentication/athelas-authentication.yml
+  scopes: scopes/athelas-scopes.yml

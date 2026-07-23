@@ -1,0 +1,48 @@
+{
+  "issuer": "https://cognito-idp.us-east-2.amazonaws.com/us-east-2_KudjXF579",
+  "jwks_uri": "https://cognito-idp.us-east-2.amazonaws.com/us-east-2_KudjXF579/.well-known/jwks.json",
+  "authorization_endpoint": "https://onc.api.staging-ehr.athelas.com/authorize",
+  "token_endpoint": "https://onc.api.staging-ehr.athelas.com/token",
+  "introspection_endpoint": "https://onc.api.staging-ehr.athelas.com/introspect",
+  "revocation_endpoint": "https://onc.api.staging-ehr.athelas.com/revoke",
+  "token_endpoint_auth_methods_supported": [
+    "none",
+    "client_secret_post",
+    "client_secret_basic",
+    "private_key_jwt"
+  ],
+  "token_endpoint_auth_signing_alg_values_supported": ["RS256", "ES256"],
+  "grant_types_supported": [
+    "authorization_code",
+    "client_credentials",
+    "refresh_token"
+  ],
+  "response_types_supported": ["code"],
+  "scopes_supported": [
+    "openid", "profile", "fhirUser", "launch", "launch/patient", "offline_access",
+    "patient/Patient.rs", "patient/AllergyIntolerance.rs", "patient/CarePlan.rs",
+    "patient/CareTeam.rs", "patient/Condition.rs", "patient/Coverage.rs",
+    "patient/Device.rs", "patient/DiagnosticReport.rs", "patient/DocumentReference.rs",
+    "patient/Encounter.rs", "patient/Goal.rs", "patient/Immunization.rs",
+    "patient/Location.rs", "patient/MedicationDispense.rs", "patient/MedicationRequest.rs",
+    "patient/Observation.rs", "patient/Organization.rs", "patient/Practitioner.rs",
+    "patient/PractitionerRole.rs", "patient/Procedure.rs", "patient/Provenance.rs",
+    "patient/RelatedPerson.rs", "patient/ServiceRequest.rs", "patient/Specimen.rs",
+    "system/*.rs"
+  ],
+  "code_challenge_methods_supported": ["S256"],
+  "capabilities": [
+    "launch-ehr",
+    "launch-standalone",
+    "client-public",
+    "client-confidential-symmetric",
+    "client-confidential-asymmetric",
+    "context-ehr-patient",
+    "context-standalone-patient",
+    "sso-openid-connect",
+    "permission-patient",
+    "permission-offline",
+    "permission-v2",
+    "authorize-post"
+  ]
+}

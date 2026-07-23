@@ -1,0 +1,252 @@
+openapi: 3.1.0
+info:
+  title: Athelas Enterprise Auth Prescribers API
+  version: '1.0'
+  description: Athelas Enterprise Remote Patient Monitoring (RPM) API. Manage patients, sites, prescribers, RPM device shipping, and test results. Harvested verbatim from the per-operation OpenAPI blocks published on the Athelas ReadMe developer hub.
+servers:
+- url: https://api.athelas.com/enterprise/v1
+  description: Production
+- url: https://staging-api.athelas.com/enterprise/v1
+  description: Staging
+security:
+- bearerAuth: []
+tags:
+- name: Prescribers
+paths:
+  /prescribers/create:
+    post:
+      summary: Create
+      description: Create a prescriber object. A prescriber is the doctor for a given patient.
+      operationId: create-2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: First name of prescriber
+                  default: John
+                last_name:
+                  type: string
+                  description: Last name of prescriber
+                  default: Smith
+                title:
+                  type: string
+                  description: Title of the Prescriber. Options are [ “N.P.”, “M.D.”, “P.A.”, “LVN” ]
+                  default: N.P.
+                npi:
+                  type: string
+                  description: NPI number
+                  default: '1245319592'
+                site_ids:
+                  type: array
+                  description: The Athelas Site ID of the site that the prescriber will be associated with
+                  default:
+                  - null
+                  - null
+                  items:
+                    type: integer
+                    format: int32
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n   \"id\": 234,\n   \"first_name\": \"John\",\n   \"last_name\": \"Smith\",\n   \"title\": \"N.P.\",\n   \"npi\": \"1245319592\",\n   \"site_ids\": [45,12]\n}\n"
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 234
+                    default: 0
+                  first_name:
+                    type: string
+                    example: John
+                  last_name:
+                    type: string
+                    example: Smith
+                  title:
+                    type: string
+                    example: N.P.
+                  npi:
+                    type: string
+                    example: '1245319592'
+                  site_ids:
+                    type: array
+                    items:
+                      type: integer
+                      example: 45
+                      default: 0
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      tags:
+      - Prescribers
+  /prescribers/{id}/update:
+    post:
+      summary: Update
+      description: Create a prescriber object. A prescriber is the doctor for a given patient. At least one site must be created before a prescriber is created; they are associated with sites.
+      operationId: update-1
+      parameters:
+      - name: id
+        in: path
+        description: ID of the prescriber that will be updated
+        schema:
+          type: integer
+          format: int32
+          default: 234
+        required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - first_name
+              - last_name
+              - title
+              - npi
+              - site_id
+              properties:
+                first_name:
+                  type: string
+                  description: First name of prescriber
+                  default: John
+                last_name:
+                  type: string
+                  description: Last name of prescriber
+                  default: Smith
+                title:
+                  type: string
+                  description: Title of the Prescriber. Options are [ “N.P.”, “M.D.”, “P.A.”, “LVN” ]
+                  default: N.P.
+                npi:
+                  type: string
+                  description: NPI number
+                  default: '1245319592'
+                site_id:
+                  type: integer
+                  description: The Athelas Site ID of the site that the prescriber will be associated with
+                  default: 45
+                  format: int32
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n   \"id\": 234,\n   \"first_name\": \"John\",\n   \"last_name\": \"Smith\",\n   \"title\": \"N.P.\",\n   \"npi\": \"1245319592\",\n   \"site_id\": 45\n}\n"
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 234
+                    default: 0
+                  first_name:
+                    type: string
+                    example: John
+                  last_name:
+                    type: string
+                    example: Smith
+                  title:
+                    type: string
+                    example: N.P.
+                  npi:
+                    type: string
+                    example: '1245319592'
+                  site_id:
+                    type: integer
+                    example: 45
+                    default: 0
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      tags:
+      - Prescribers
+  /prescribers/{id}:
+    get:
+      summary: Get
+      description: Get a prescriber object
+      operationId: get-2
+      parameters:
+      - name: id
+        in: path
+        description: ID of the prescriber object to get
+        schema:
+          type: integer
+          format: int32
+          default: 14
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"first_name\": \"Elizabeth\",\n    \"id\": 11,\n    \"last_name\": \"Blackwell\",\n    \"npi\": \"1234567890\",\n    \"site_id\": 15,\n    \"title\": \"Dr.\"\n}"
+              schema:
+                type: object
+                properties:
+                  first_name:
+                    type: string
+                    example: Elizabeth
+                  id:
+                    type: integer
+                    example: 11
+                    default: 0
+                  last_name:
+                    type: string
+                    example: Blackwell
+                  npi:
+                    type: string
+                    example: '1234567890'
+                  site_id:
+                    type: integer
+                    example: 15
+                    default: 0
+                  title:
+                    type: string
+                    example: Dr.
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      tags:
+      - Prescribers
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token obtained from POST /auth/login. Tokens expire after 60 minutes.
