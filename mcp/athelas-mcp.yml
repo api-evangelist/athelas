@@ -100,3 +100,9 @@ tools:
   method: POST
   path: /test_types/{id}/ship_rpm_device
   source_operation: openapi/athelas-enterprise-openapi.yml#queue-rpm-device-for-shipping
+deployment:
+  mode: none
+  verified: derived
+  tools: 18
+  checked: '2026-08-12'
+  source: catalog MCP census

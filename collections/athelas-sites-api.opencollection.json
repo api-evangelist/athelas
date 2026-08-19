@@ -1,0 +1,119 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Athelas Enterprise Auth Sites API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sites",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.athelas.com/enterprise/v1/sites/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a site object. Sites are associated with a set of patients."
+        },
+        {
+          "info": {
+            "name": "Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.athelas.com/enterprise/v1/sites/:id/update",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the site to update"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Edit a site object. Sites are associated with a set of patients."
+        },
+        {
+          "info": {
+            "name": "Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.athelas.com/enterprise/v1/sites/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the site requested"
+              }
+            ]
+          },
+          "docs": "Get a site object."
+        },
+        {
+          "info": {
+            "name": "Get Patients",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.athelas.com/enterprise/v1/sites/:id/patients",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the site to get all patient ids from"
+              }
+            ]
+          },
+          "docs": "Get a list of patient ids in a site."
+        },
+        {
+          "info": {
+            "name": "Get Prescribers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.athelas.com/enterprise/v1/sites/:id/prescribers",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the site to get prescribers for"
+              }
+            ]
+          },
+          "docs": "Get a list of prescriber ids in a site."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

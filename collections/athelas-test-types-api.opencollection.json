@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Athelas Enterprise Auth Test Types API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Test Types",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Queue RPM Device for Shipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.athelas.com/enterprise/v1/test_types/:id/ship_rpm_device",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Patient ID"
+              }
+            ]
+          },
+          "docs": "This page will help you get started with Test Types."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

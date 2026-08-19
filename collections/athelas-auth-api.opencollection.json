@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Athelas Enterprise Auth API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Login",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.athelas.com/enterprise/v1/auth/login",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Authenticate to the Athelas API & recieve a Bearer token to perform all future requests. All authorization tokens expire after 60 minutes.\n\nPlease note that the demo login info that we have provided here will always yield you the Athelas Demo Token, which can be used on the other sections of this website."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,176 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Athelas Enterprise Auth Patients API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Patients",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.athelas.com/enterprise/v1/patients/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create patients"
+        },
+        {
+          "info": {
+            "name": "Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.athelas.com/enterprise/v1/patients/:id/update",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of patient to be updated"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update patient"
+        },
+        {
+          "info": {
+            "name": "Activate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.athelas.com/enterprise/v1/patients/:id/activate",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the patient to activate"
+              }
+            ]
+          },
+          "docs": "Activate a patient."
+        },
+        {
+          "info": {
+            "name": "Deactivate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.athelas.com/enterprise/v1/patients/:id/deactivate",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of patient to deactivate"
+              }
+            ]
+          },
+          "docs": "Deactivate a patient. This ensures the following will happen: The patient will be removed from all enrollment flows. No further messages will go out to the given patient."
+        },
+        {
+          "info": {
+            "name": "Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.athelas.com/enterprise/v1/patients/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of Patient to fetch Patient object for"
+              }
+            ]
+          },
+          "docs": "Fetch the patient object"
+        },
+        {
+          "info": {
+            "name": "View Test Results",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.athelas.com/enterprise/v1/patients/:id/test_results",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the patient for which the results are being queried"
+              }
+            ]
+          },
+          "docs": "View all the test results for a given patient. The list is sorted by most recent first."
+        },
+        {
+          "info": {
+            "name": "Verify Address",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.athelas.com/enterprise/v1/patients/:id/verify_address",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Patient ID"
+              }
+            ]
+          },
+          "docs": "Verify Address"
+        },
+        {
+          "info": {
+            "name": "Address Verified",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.athelas.com/enterprise/v1/patients/:id/address_verified",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Patient ID"
+              }
+            ]
+          },
+          "docs": "Check if the address verification that you queued manually has been successful"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
