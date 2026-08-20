@@ -46,6 +46,17 @@ tags:
 - Medical Devices
 - SMART on FHIR
 - Interoperability
+- Artificial Intelligence
+tags_raw:
+- Company
+- Healthcare
+- Remote Patient Monitoring
+- Electronic Health Records
+- FHIR
+- Revenue Cycle Management
+- Medical Devices
+- SMART on FHIR
+- Interoperability
 - AI
 apis:
 - name: Commure EHR FHIR API
@@ -74,6 +85,8 @@ apis:
   humanURL: https://athelas.readme.io/
   baseURL: https://api.athelas.com/enterprise/v1
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
