@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Athelas Enterprise Auth Sites API
+  title: Athelas Enterprise Sites API
   version: '1.0'
   description: Athelas Enterprise Remote Patient Monitoring (RPM) API. Manage patients, sites, prescribers, RPM device shipping, and test results. Harvested verbatim from the per-operation OpenAPI blocks published on the Athelas ReadMe developer hub.
 servers:

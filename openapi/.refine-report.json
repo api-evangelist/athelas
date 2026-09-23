@@ -1,11 +1,7 @@
 {
   "provider": "athelas",
   "sources": [
-    "athelas-auth-api-openapi.yml",
-    "athelas-patients-api-openapi.yml",
-    "athelas-prescribers-api-openapi.yml",
-    "athelas-sites-api-openapi.yml",
-    "athelas-test-types-api-openapi.yml"
+    "_original/athelas-enterprise-openapi.yml"
   ],
   "outputs": [
     "athelas-auth-api-openapi.yml",
@@ -17,6 +13,39 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "athelas-enterprise-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "athelas-enterprise-openapi.yml: tagged paths POST /auth/login -> Auth",
+    "athelas-enterprise-openapi.yml: tagged paths POST /patients/create -> Patients",
+    "athelas-enterprise-openapi.yml: tagged paths POST /patients/{id}/update -> Patients",
+    "athelas-enterprise-openapi.yml: tagged paths POST /patients/{id}/activate -> Patients",
+    "athelas-enterprise-openapi.yml: tagged paths POST /patients/{id}/deactivate -> Patients",
+    "athelas-enterprise-openapi.yml: tagged paths GET /patients/{id} -> Patients",
+    "athelas-enterprise-openapi.yml: tagged paths GET /patients/{id}/test_results -> Patients",
+    "athelas-enterprise-openapi.yml: tagged paths POST /patients/{id}/verify_address -> Patients",
+    "athelas-enterprise-openapi.yml: tagged paths GET /patients/{id}/address_verified -> Patients",
+    "athelas-enterprise-openapi.yml: tagged paths POST /sites/create -> Sites",
+    "athelas-enterprise-openapi.yml: tagged paths POST /sites/{id}/update -> Sites",
+    "athelas-enterprise-openapi.yml: tagged paths GET /sites/{id} -> Sites",
+    "athelas-enterprise-openapi.yml: tagged paths GET /sites/{id}/patients -> Sites",
+    "athelas-enterprise-openapi.yml: tagged paths GET /sites/{id}/prescribers -> Sites",
+    "athelas-enterprise-openapi.yml: tagged paths POST /prescribers/create -> Prescribers",
+    "athelas-enterprise-openapi.yml: tagged paths POST /prescribers/{id}/update -> Prescribers",
+    "athelas-enterprise-openapi.yml: tagged paths GET /prescribers/{id} -> Prescribers",
+    "athelas-enterprise-openapi.yml: tagged paths POST /test_types/{id}/ship_rpm_device -> Test Types",
+    "athelas-enterprise-openapi.yml: declared missing tag: Auth",
+    "athelas-enterprise-openapi.yml: declared missing tag: Patients",
+    "athelas-enterprise-openapi.yml: declared missing tag: Prescribers",
+    "athelas-enterprise-openapi.yml: declared missing tag: Sites",
+    "athelas-enterprise-openapi.yml: declared missing tag: Test Types",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "athelas-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "athelas-patients-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "athelas-prescribers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "athelas-sites-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "athelas-test-types-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
