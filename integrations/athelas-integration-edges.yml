@@ -142,6 +142,54 @@ edges:
       P856 not contradicting (Kin 2026-10-20 decision 2)
   detected_by: sweep-ivd-diagnostics.py
   first_seen: '2026-10-21'
+- partner_name: Health Canada (Medical Device Licence)
+  partner: null
+  partner_match: register-name
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://health-products.canada.ca/api/medical-devices/company/?id=148147&lang=en&type=json
+  category: Canadian medical device licence
+  contract_reference:
+    register: Health Canada Medical Devices Active Licence Listing (MDALL) public API (health-products.canada.ca/api/medical-devices)
+    standard: Canada Medical Devices Regulations (SOR/98-282), Medical Device Licence
+    spec_file: null
+    role: licence-holder
+    registered_name: ATHELAS INC.
+    register_country: US
+    register_id: https://health-products.canada.ca/api/medical-devices/company/?id=148147&lang=en&type=json
+    company_status: A
+    matched_domain: null
+    matched_by: register-name
+    certified_products:
+    - product: Health Canada Medical Device Licence, Class II
+      product_type: Class II
+      risk_class: 2
+      lapsed: true
+      first_issued: '2019-05-03'
+      conditional: false
+      licences_sample:
+      - WBC QUALITY CONTROL FLUID
+    - product: Health Canada Medical Device Licence, Class III
+      product_type: Class III
+      risk_class: 3
+      lapsed: false
+      first_issued: '2019-10-15'
+      conditional: false
+      licences_sample:
+      - ATHELAS ONE WBC SYSTEM
+    signal_note: certified_products = one entry per device RISK CLASS licensed by Health Canada, lapsed when no
+      licence of that class is still issued (status I / D, no end date); licence names are a sample, licence and
+      device counts are context, never counted
+    detected_by: sweep-canada-medical-device-licensing.py
+    detected: '2026-10-22'
+    register_name_note: register-name 'athelas' = athelas; no wikidata P856
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  detected_by: sweep-canada-medical-device-licensing.py
+  first_seen: '2026-10-22'
 generated: '2026-10-20'
 method: searched
 source:
@@ -156,3 +204,5 @@ checked:
 - https://ec.europa.eu/tools/eudamed/api/
 - https://www.accessdata.fda.gov/premarket/ftparea/clia_detail.zip
 - https://www.advamed.org/advameddx/members/
+- https://health-products.canada.ca/api/medical-devices/company/?lang=en&type=json
+- https://health-products.canada.ca/api/medical-devices/licence/?lang=en&type=json
