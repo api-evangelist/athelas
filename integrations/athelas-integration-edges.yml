@@ -190,6 +190,69 @@ edges:
       P856 not contradicting (Kin 2026-10-20 decision 2)
   detected_by: sweep-canada-medical-device-licensing.py
   first_seen: '2026-10-22'
+- partner_name: CMS NPPES (National Plan and Provider Enumeration System)
+  partner: null
+  partner_match: register
+  type: register
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://npiregistry.cms.hhs.gov/api/?version=2.1&number=1528605987
+  category: US healthcare provider NPI enumeration
+  contract_reference:
+    register: CMS NPPES NPI Registry (npiregistry.cms.hhs.gov API v2.1, NPI-2 organisations)
+    standard: National Provider Identifier (HIPAA standard unique health identifier, 45 CFR 162 Subpart D)
+    spec_file: null
+    role: npi-2-organization
+    registered_name: ATHELAS INC
+    register_id: '1528605987'
+    register_country: US
+    register_state: CA
+    npi_status: A
+    enumeration_date: '2019-12-04'
+    primary_taxonomy: Clinic/Center
+    primary_taxonomy_code: 261Q00000X
+    matched_domain: athelas.com
+    matched_by: domain (domain, own-domain NPPES endpoint)
+    other_registrations: []
+    national_directory:
+      ndh: found
+      ndh_verification_status: complete
+      ndh_part_of: null
+    signal_note: 'regulated identity: the organisation is enumerated in NPPES (an NPI-2 is required of HIPAA covered
+      healthcare providers); exact legal name AND (an own-domain endpoint or the Wikidata HQ state); other NPIs
+      are context, never counted'
+    detected_by: sweep-us-npi-health-provider-registry.py
+    detected: '2026-10-22'
+  detected_by: sweep-us-npi-health-provider-registry.py
+  first_seen: '2026-10-22'
+- partner_name: NPPES health-data-exchange endpoint (Direct / FHIR / CONNECT)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://npiregistry.cms.hhs.gov/api/?version=2.1&number=1528605987
+  category: registered health data exchange endpoint
+  contract_reference:
+    register: CMS NPPES NPI Registry endpoint field (npiregistry.cms.hhs.gov API v2.1)
+    standard: Direct (DirectTrust secure messaging)
+    spec_file: null
+    role: nppes-endpoint-publisher
+    registered_name: ATHELAS INC
+    register_id: '1528605987'
+    endpoint_types:
+    - DIRECT
+    example_endpoint_domain: athelas.com
+    matched_domain: athelas.com
+    matched_by: domain (domain, own-domain NPPES endpoint)
+    signal_note: 'participation only: the organisation registered a health-data-exchange endpoint on its OWN domain
+      in NPPES; endpoint types are context, never counted'
+    detected_by: sweep-us-npi-health-provider-registry.py
+    detected: '2026-10-22'
+  detected_by: sweep-us-npi-health-provider-registry.py
+  first_seen: '2026-10-22'
 generated: '2026-10-20'
 method: searched
 source:
@@ -206,3 +269,6 @@ checked:
 - https://www.advamed.org/advameddx/members/
 - https://health-products.canada.ca/api/medical-devices/company/?lang=en&type=json
 - https://health-products.canada.ca/api/medical-devices/licence/?lang=en&type=json
+- https://directory.cms.gov/fhir/
+- https://download.cms.gov/nppes/NPI_Files.html
+- https://npiregistry.cms.hhs.gov/
