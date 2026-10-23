@@ -193,6 +193,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/athelas/overview
 - type: CapabilityMap
   url: capabilities/athelas-capability-edges.yml
   name: Athelas Business Capability Map
