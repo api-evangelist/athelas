@@ -1,806 +1,823 @@
 {
+  "info": {
+    "_postman_id": "0e78c491-b98a-4116-811d-82363c00dc3d",
+    "name": "Athelas Enterprise Sites API",
+    "description": "Athelas Enterprise Remote Patient Monitoring (RPM) API. Manage patients, sites, prescribers, RPM device shipping, and test results. Harvested verbatim from the per-operation OpenAPI blocks published on the Athelas ReadMe developer hub.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T01:25:08.000Z",
+    "updatedAt": "2026-10-22T01:25:09.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0e78c491-b98a-4116-811d-82363c00dc3d"
+  },
   "item": [
     {
-      "id": "9438d33e-aff0-4818-b6b8-454a077f4740",
-      "name": "Sites",
-      "description": {
-        "content": "",
-        "type": "text/plain"
-      },
+      "name": "sites",
       "item": [
         {
-          "id": "f4a46888-c76b-445c-9366-af3ea084199c",
-          "name": "Create",
-          "request": {
-            "name": "Create",
-            "description": {
-              "content": "Create a site object. Sites are associated with a set of patients.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "sites",
-                "create"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"Valley Clinic\",\n  \"address\": \"160 S Whisman Rd, Mountain View, 94041\",\n  \"active\": true,\n  \"user_id\": 1,\n  \"organization_id\": 1\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
+          "name": "create",
+          "item": [
             {
-              "id": "177b3b86-3bf5-46ec-95d6-e1eeedd403a6",
-              "name": "200",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "sites",
-                    "create"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+              "name": "Create",
+              "id": "e095fc68-a2e7-4c3c-b818-8af1f42d095f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
                   "raw": "{\n  \"name\": \"Valley Clinic\",\n  \"address\": \"160 S Whisman Rd, Mountain View, 94041\",\n  \"active\": true,\n  \"user_id\": 1,\n  \"organization_id\": 1\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{\\n   \\\"id\\\": 43,\\n   \\\"name\\\": \\\"Valley Clinic\\\",\\n   \\\"address\\\": \\\"160 S Whisman Rd, Mountain View, 94041\\\",\\n   \\\"active\\\": true\\n}\\n\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "448e4005-cca3-486e-8c22-80c13e40b6de",
-              "name": "400",
-              "originalRequest": {
+                },
                 "url": {
+                  "raw": "{{baseUrl}}/sites/create",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
                   "path": [
                     "sites",
                     "create"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"name\": \"Valley Clinic\",\n  \"address\": \"160 S Whisman Rd, Mountain View, 94041\",\n  \"active\": true,\n  \"user_id\": 1,\n  \"organization_id\": 1\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "c38f9056-3fb2-4fd3-8fac-0af8ab049aab",
-          "name": "Update",
-          "request": {
-            "name": "Update",
-            "description": {
-              "content": "Edit a site object. Sites are associated with a set of patients.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "sites",
-                ":id",
-                "update"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "43",
-                  "key": "id",
-                  "description": "(Required) ID of the site to update"
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"Valley Clinic Two\",\n  \"address\": \"160 S Whisman Rd, Mountain View, 94041\",\n  \"active\": false\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "4d0790cb-1a57-4dc1-91b6-cf19a68f6cd5",
-              "name": "200",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "sites",
-                    ":id",
-                    "update"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "43",
-                      "key": "id",
-                      "description": "(Required) ID of the site to update"
-                    }
                   ]
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
+                "description": "Create a site object. Sites are associated with a set of patients."
+              },
+              "response": [
+                {
+                  "id": "553fb77f-090d-4211-986c-3ef0ff3632c6",
+                  "name": "200",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"Valley Clinic\",\n  \"address\": \"160 S Whisman Rd, Mountain View, 94041\",\n  \"active\": true,\n  \"user_id\": 1,\n  \"organization_id\": 1\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
                     },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/create",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        "create"
+                      ]
+                    }
                   },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": 0,\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"active\": true\n}",
+                  "createdAt": "2026-10-22T01:25:09.000Z",
+                  "updatedAt": "2026-10-22T01:25:09.000Z",
+                  "uid": "35240-553fb77f-090d-4211-986c-3ef0ff3632c6"
+                },
+                {
+                  "id": "ad439284-4fad-418e-9d90-90e2003dc153",
+                  "name": "400",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"Valley Clinic\",\n  \"address\": \"160 S Whisman Rd, Mountain View, 94041\",\n  \"active\": true,\n  \"user_id\": 1,\n  \"organization_id\": 1\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/create",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        "create"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-10-22T01:25:09.000Z",
+                  "updatedAt": "2026-10-22T01:25:09.000Z",
+                  "uid": "35240-ad439284-4fad-418e-9d90-90e2003dc153"
+                }
+              ],
+              "createdAt": "2026-10-22T01:25:09.000Z",
+              "updatedAt": "2026-10-22T01:25:09.000Z",
+              "uid": "35240-e095fc68-a2e7-4c3c-b818-8af1f42d095f"
+            }
+          ],
+          "id": "a1c5fb3e-a692-4753-9f1c-d0ebc46a6edc",
+          "createdAt": "2026-10-22T01:25:09.000Z",
+          "updatedAt": "2026-10-22T01:25:09.000Z",
+          "uid": "35240-a1c5fb3e-a692-4753-9f1c-d0ebc46a6edc"
+        },
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "update",
+              "item": [
+                {
+                  "name": "Update",
+                  "id": "98b1b042-a3e0-44a5-90bf-b27415899466",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"Valley Clinic Two\",\n  \"address\": \"160 S Whisman Rd, Mountain View, 94041\",\n  \"active\": false\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:id/update",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":id",
+                        "update"
+                      ],
+                      "variable": [
+                        {
+                          "id": "70526955-4d09-42eb-b05a-ea281a7dad6f",
+                          "key": "id",
+                          "value": "43",
+                          "description": "(Required) ID of the site to update"
+                        }
+                      ]
+                    },
+                    "description": "Edit a site object. Sites are associated with a set of patients."
+                  },
+                  "response": [
+                    {
+                      "id": "f1ccf2b1-ff90-4557-a675-d8e4d9f261d8",
+                      "name": "200",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"Valley Clinic Two\",\n  \"address\": \"160 S Whisman Rd, Mountain View, 94041\",\n  \"active\": false\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:id/update",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":id",
+                            "update"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": 0,\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"active\": true\n}",
+                      "createdAt": "2026-10-22T01:25:09.000Z",
+                      "updatedAt": "2026-10-22T01:25:09.000Z",
+                      "uid": "35240-f1ccf2b1-ff90-4557-a675-d8e4d9f261d8"
+                    },
+                    {
+                      "id": "65b5efe8-d6d9-4067-8a7e-ed2e7f410b1c",
+                      "name": "400",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"Valley Clinic Two\",\n  \"address\": \"160 S Whisman Rd, Mountain View, 94041\",\n  \"active\": false\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:id/update",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":id",
+                            "update"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-10-22T01:25:09.000Z",
+                      "updatedAt": "2026-10-22T01:25:09.000Z",
+                      "uid": "35240-65b5efe8-d6d9-4067-8a7e-ed2e7f410b1c"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T01:25:09.000Z",
+                  "updatedAt": "2026-10-22T01:25:09.000Z",
+                  "uid": "35240-98b1b042-a3e0-44a5-90bf-b27415899466"
+                }
+              ],
+              "id": "0f3a9daa-de2b-4f08-9dae-457785c1b322",
+              "createdAt": "2026-10-22T01:25:09.000Z",
+              "updatedAt": "2026-10-22T01:25:09.000Z",
+              "uid": "35240-0f3a9daa-de2b-4f08-9dae-457785c1b322"
+            },
+            {
+              "name": "patients",
+              "item": [
+                {
+                  "name": "Get Patients",
+                  "id": "6d409963-89e4-4b5c-b801-452ab817ea38",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:id/patients",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":id",
+                        "patients"
+                      ],
+                      "variable": [
+                        {
+                          "id": "de982413-8389-4d58-ab0d-44e394c92d7a",
+                          "key": "id",
+                          "value": "20",
+                          "description": "(Required) ID of the site to get all patient ids from"
+                        }
+                      ]
+                    },
+                    "description": "Get a list of patient ids in a site."
+                  },
+                  "response": [
+                    {
+                      "id": "71a1a70c-0108-4f3e-9015-6990c2d41d5e",
+                      "name": "200",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:id/patients",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":id",
+                            "patients"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"site_id\": 0,\n  \"patient_ids\": [\n    0,\n    0\n  ]\n}",
+                      "createdAt": "2026-10-22T01:25:09.000Z",
+                      "updatedAt": "2026-10-22T01:25:09.000Z",
+                      "uid": "35240-71a1a70c-0108-4f3e-9015-6990c2d41d5e"
+                    },
+                    {
+                      "id": "97163a62-725c-40f0-93e3-68ae56b2964f",
+                      "name": "400",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:id/patients",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":id",
+                            "patients"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-10-22T01:25:09.000Z",
+                      "updatedAt": "2026-10-22T01:25:09.000Z",
+                      "uid": "35240-97163a62-725c-40f0-93e3-68ae56b2964f"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T01:25:09.000Z",
+                  "updatedAt": "2026-10-22T01:25:09.000Z",
+                  "uid": "35240-6d409963-89e4-4b5c-b801-452ab817ea38"
+                }
+              ],
+              "id": "45f66fb4-9100-49fc-99e4-58ba9ed08c7b",
+              "createdAt": "2026-10-22T01:25:09.000Z",
+              "updatedAt": "2026-10-22T01:25:09.000Z",
+              "uid": "35240-45f66fb4-9100-49fc-99e4-58ba9ed08c7b"
+            },
+            {
+              "name": "prescribers",
+              "item": [
+                {
+                  "name": "Get Prescribers",
+                  "id": "0c7a30cd-faee-4250-965f-e0a135b61360",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:id/prescribers",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":id",
+                        "prescribers"
+                      ],
+                      "variable": [
+                        {
+                          "id": "f0772ce7-3838-4c4a-a014-ab54e34c07da",
+                          "key": "id",
+                          "value": "20",
+                          "description": "(Required) ID of the site to get prescribers for"
+                        }
+                      ]
+                    },
+                    "description": "Get a list of prescriber ids in a site."
+                  },
+                  "response": [
+                    {
+                      "id": "068aa128-6784-4045-9814-7daa2151e6dc",
+                      "name": "200",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:id/prescribers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":id",
+                            "prescribers"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"site_id\": 0,\n  \"prescriber_ids\": [\n    0,\n    0\n  ]\n}",
+                      "createdAt": "2026-10-22T01:25:09.000Z",
+                      "updatedAt": "2026-10-22T01:25:09.000Z",
+                      "uid": "35240-068aa128-6784-4045-9814-7daa2151e6dc"
+                    },
+                    {
+                      "id": "69a5fc3b-cfd5-4e47-8782-78af05c074e3",
+                      "name": "400",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:id/prescribers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":id",
+                            "prescribers"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-10-22T01:25:09.000Z",
+                      "updatedAt": "2026-10-22T01:25:09.000Z",
+                      "uid": "35240-69a5fc3b-cfd5-4e47-8782-78af05c074e3"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T01:25:09.000Z",
+                  "updatedAt": "2026-10-22T01:25:09.000Z",
+                  "uid": "35240-0c7a30cd-faee-4250-965f-e0a135b61360"
+                }
+              ],
+              "id": "136c2bd3-8500-49fe-8745-47ee044de7f4",
+              "createdAt": "2026-10-22T01:25:09.000Z",
+              "updatedAt": "2026-10-22T01:25:09.000Z",
+              "uid": "35240-136c2bd3-8500-49fe-8745-47ee044de7f4"
+            },
+            {
+              "name": "Get",
+              "id": "e1f1aa83-8caa-4387-b5cb-654e366aad41",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
                   {
                     "key": "Accept",
                     "value": "application/json"
                   }
                 ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"name\": \"Valley Clinic Two\",\n  \"address\": \"160 S Whisman Rd, Mountain View, 94041\",\n  \"active\": false\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{\\n   \\\"id\\\": 43,\\n   \\\"name\\\": \\\"Valley Clinic Two\\\",\\n   \\\"address\\\": \\\"160 S Whisman Rd, Mountain View, 94041\\\",\\n   \\\"active\\\": true\\n}\\n\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "b18b0ff2-42c0-40f9-809a-c3641ea0f570",
-              "name": "400",
-              "originalRequest": {
                 "url": {
-                  "path": [
-                    "sites",
-                    ":id",
-                    "update"
-                  ],
+                  "raw": "{{baseUrl}}/sites/:id",
                   "host": [
                     "{{baseUrl}}"
                   ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "43",
-                      "key": "id",
-                      "description": "(Required) ID of the site to update"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"name\": \"Valley Clinic Two\",\n  \"address\": \"160 S Whisman Rd, Mountain View, 94041\",\n  \"active\": false\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "7d29fc11-e05b-4d2a-b310-35f454333a24",
-          "name": "Get",
-          "request": {
-            "name": "Get",
-            "description": {
-              "content": "Get a site object.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "sites",
-                ":id"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "43",
-                  "key": "id",
-                  "description": "(Required) ID of the site requested"
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "52e6ad55-6cc5-4d0c-b2ab-3386f54d7647",
-              "name": "200",
-              "originalRequest": {
-                "url": {
                   "path": [
                     "sites",
                     ":id"
                   ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
                   "variable": [
                     {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "43",
+                      "id": "5c37025b-f9ea-4aa6-a8c5-76ee9686f405",
                       "key": "id",
+                      "value": "43",
                       "description": "(Required) ID of the site requested"
                     }
                   ]
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                "description": "Get a site object."
               },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "response": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{\\n   \\\"id\\\": 43,\\n   \\\"name\\\": \\\"Valley Clinic\\\",\\n   \\\"address\\\": \\\"160 S Whisman Rd, Mountain View, 94041\\\",\\n   \\\"active\\\": true\\n}\\n\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "bda023dd-b88f-4119-89fe-d7869da1c73c",
-              "name": "400",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "sites",
-                    ":id"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "43",
-                      "key": "id",
-                      "description": "(Required) ID of the site requested"
+                  "id": "00a6d1d2-18ba-4669-bbd3-26182ce74aab",
+                  "name": "200",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
                     }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
                   },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": 0,\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"active\": true\n}",
+                  "createdAt": "2026-10-22T01:25:09.000Z",
+                  "updatedAt": "2026-10-22T01:25:09.000Z",
+                  "uid": "35240-00a6d1d2-18ba-4669-bbd3-26182ce74aab"
+                },
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
+                  "id": "e2f5df14-a7ec-4f7a-808a-d23bc0f7b72f",
+                  "name": "400",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-10-22T01:25:09.000Z",
+                  "updatedAt": "2026-10-22T01:25:09.000Z",
+                  "uid": "35240-e2f5df14-a7ec-4f7a-808a-d23bc0f7b72f"
                 }
               ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "createdAt": "2026-10-22T01:25:09.000Z",
+              "updatedAt": "2026-10-22T01:25:09.000Z",
+              "uid": "35240-e1f1aa83-8caa-4387-b5cb-654e366aad41"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "af933524-1a77-4a56-9631-ec129826726a",
-          "name": "Get Patients",
-          "request": {
-            "name": "Get Patients",
-            "description": {
-              "content": "Get a list of patient ids in a site.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "sites",
-                ":id",
-                "patients"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "20",
-                  "key": "id",
-                  "description": "(Required) ID of the site to get all patient ids from"
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "2ff81c5b-6a50-48e3-a3bc-015d1c068623",
-              "name": "200",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "sites",
-                    ":id",
-                    "patients"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "20",
-                      "key": "id",
-                      "description": "(Required) ID of the site to get all patient ids from"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{\\n   \\\"site_id\\\": 20,\\n   \\\"patient_ids\\\": [\\n       23,\\n       25,\\n       12\\n   ]\\n}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "17edb81e-4327-4a25-84a8-3e00c0c5e879",
-              "name": "400",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "sites",
-                    ":id",
-                    "patients"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "20",
-                      "key": "id",
-                      "description": "(Required) ID of the site to get all patient ids from"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "e044ea84-d0d4-43e1-98d1-a966106f6473",
-          "name": "Get Prescribers",
-          "request": {
-            "name": "Get Prescribers",
-            "description": {
-              "content": "Get a list of prescriber ids in a site.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "sites",
-                ":id",
-                "prescribers"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "20",
-                  "key": "id",
-                  "description": "(Required) ID of the site to get prescribers for"
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "3c676691-7f0d-4a61-80b9-2edb2bb3530b",
-              "name": "200",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "sites",
-                    ":id",
-                    "prescribers"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "20",
-                      "key": "id",
-                      "description": "(Required) ID of the site to get prescribers for"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{\\n   \\\"site_id\\\": 20,\\n   \\\"prescriber_ids\\\": [\\n       125,\\n       342,\\n       121\\n   ]\\n}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "e5cb1af0-e9a6-4a03-ba8d-7dd34b346391",
-              "name": "400",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "sites",
-                    ":id",
-                    "prescribers"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "20",
-                      "key": "id",
-                      "description": "(Required) ID of the site to get prescribers for"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "1105a25a-15de-401b-970d-494b036ad9c3",
+          "createdAt": "2026-10-22T01:25:09.000Z",
+          "updatedAt": "2026-10-22T01:25:09.000Z",
+          "uid": "35240-1105a25a-15de-401b-970d-494b036ad9c3"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://api.athelas.com/enterprise/v1",
-      "key": "baseUrl"
+      "id": "b4bfe318-99ac-4f3d-9e96-f6aa0ea37281",
+      "createdAt": "2026-10-22T01:25:09.000Z",
+      "updatedAt": "2026-10-22T01:25:09.000Z",
+      "uid": "35240-b4bfe318-99ac-4f3d-9e96-f6aa0ea37281"
     }
   ],
   "auth": {
@@ -808,17 +825,15 @@
     "bearer": [
       {
         "key": "token",
-        "value": "{{bearerToken}}"
+        "value": "{{bearerToken}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "25ac506f-68d7-4ae8-9008-10781060dd62",
-    "name": "Athelas Enterprise Auth Sites API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "Athelas Enterprise Remote Patient Monitoring (RPM) API. Manage patients, sites, prescribers, RPM device shipping, and test results. Harvested verbatim from the per-operation OpenAPI blocks published on the Athelas ReadMe developer hub.",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.athelas.com/enterprise/v1"
     }
-  }
+  ]
 }

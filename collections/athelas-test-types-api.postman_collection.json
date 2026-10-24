@@ -1,174 +1,180 @@
 {
+  "info": {
+    "_postman_id": "bf729e7d-4b67-49db-815c-3f55b4a2bcb7",
+    "name": "Athelas Enterprise Test Types API",
+    "description": "Athelas Enterprise Remote Patient Monitoring (RPM) API. Manage patients, sites, prescribers, RPM device shipping, and test results. Harvested verbatim from the per-operation OpenAPI blocks published on the Athelas ReadMe developer hub.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T01:25:12.000Z",
+    "updatedAt": "2026-10-22T01:25:13.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-bf729e7d-4b67-49db-815c-3f55b4a2bcb7"
+  },
   "item": [
     {
-      "id": "861f640a-ca4c-4fab-a38d-117c201887d0",
-      "name": "Test Types",
-      "description": {
-        "content": "",
-        "type": "text/plain"
-      },
+      "name": "test_types",
       "item": [
         {
-          "id": "220dde63-5de6-419b-a8ee-5df3b833fbe6",
-          "name": "Queue RPM Device for Shipment",
-          "request": {
-            "name": "Queue RPM Device for Shipment",
-            "description": {
-              "content": "This page will help you get started with Test Types.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "test_types",
-                ":id",
-                "ship_rpm_device"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "524",
-                  "key": "id",
-                  "description": "(Required) Patient ID"
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null
-          },
-          "response": [
+          "name": "{id}",
+          "item": [
             {
-              "id": "4f115653-4c4e-4e4a-a1a3-f45d8e13d2f6",
-              "name": "200",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "test_types",
-                    ":id",
-                    "ship_rpm_device"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "524",
-                      "key": "id",
-                      "description": "(Required) Patient ID"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "name": "ship_rpm_device",
+              "item": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
+                  "name": "Queue RPM Device for Shipment",
+                  "id": "6b07077e-335a-4598-a374-47ce5b21c1fb",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/test_types/:id/ship_rpm_device",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "test_types",
+                        ":id",
+                        "ship_rpm_device"
+                      ],
+                      "variable": [
+                        {
+                          "id": "b9456ee1-8407-4425-a297-4526d881db29",
+                          "key": "id",
+                          "value": "524",
+                          "description": "(Required) Patient ID"
+                        }
+                      ]
+                    },
+                    "description": "This page will help you get started with Test Types."
+                  },
+                  "response": [
+                    {
+                      "id": "856659cf-d97c-43ed-9159-69e3850f1a75",
+                      "name": "200",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/test_types/:id/ship_rpm_device",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "test_types",
+                            ":id",
+                            "ship_rpm_device"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"examples\": {\n    \"Result\": {\n      \"value\": \"\"\n    }\n  }\n}",
+                      "createdAt": "2026-10-22T01:25:13.000Z",
+                      "updatedAt": "2026-10-22T01:25:13.000Z",
+                      "uid": "35240-856659cf-d97c-43ed-9159-69e3850f1a75"
+                    },
+                    {
+                      "id": "933341a6-85a7-4e9b-b49b-1f69e9dfae54",
+                      "name": "400",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/test_types/:id/ship_rpm_device",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "test_types",
+                            ":id",
+                            "ship_rpm_device"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"message\": \"<string>\"\n}",
+                      "createdAt": "2026-10-22T01:25:13.000Z",
+                      "updatedAt": "2026-10-22T01:25:13.000Z",
+                      "uid": "35240-933341a6-85a7-4e9b-b49b-1f69e9dfae54"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T01:25:13.000Z",
+                  "updatedAt": "2026-10-22T01:25:13.000Z",
+                  "uid": "35240-6b07077e-335a-4598-a374-47ce5b21c1fb"
                 }
               ],
-              "body": "\"\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "25c80457-760c-4282-b636-0fc951d25e03",
-              "name": "400",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "test_types",
-                    ":id",
-                    "ship_rpm_device"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "524",
-                      "key": "id",
-                      "description": "(Required) Patient ID"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {}
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{\\n\\t\\\"message\\\": \\\"Address not verified for this patient. Please verify address successfully before queueing shipping.\\\"\\n}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "id": "e766e9f2-e70e-4bd7-af81-c885ebb14dca",
+              "createdAt": "2026-10-22T01:25:13.000Z",
+              "updatedAt": "2026-10-22T01:25:13.000Z",
+              "uid": "35240-e766e9f2-e70e-4bd7-af81-c885ebb14dca"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "8aa68649-734b-463f-afcf-11cb1b6becbb",
+          "createdAt": "2026-10-22T01:25:13.000Z",
+          "updatedAt": "2026-10-22T01:25:13.000Z",
+          "uid": "35240-8aa68649-734b-463f-afcf-11cb1b6becbb"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://api.athelas.com/enterprise/v1",
-      "key": "baseUrl"
+      "id": "b5d203f0-a64e-451c-8280-acfbd338bf26",
+      "createdAt": "2026-10-22T01:25:13.000Z",
+      "updatedAt": "2026-10-22T01:25:13.000Z",
+      "uid": "35240-b5d203f0-a64e-451c-8280-acfbd338bf26"
     }
   ],
   "auth": {
@@ -176,17 +182,15 @@
     "bearer": [
       {
         "key": "token",
-        "value": "{{bearerToken}}"
+        "value": "{{bearerToken}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "c149ccbc-75cd-4f11-a6f3-524be646d5af",
-    "name": "Athelas Enterprise Auth Test Types API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "Athelas Enterprise Remote Patient Monitoring (RPM) API. Manage patients, sites, prescribers, RPM device shipping, and test results. Harvested verbatim from the per-operation OpenAPI blocks published on the Athelas ReadMe developer hub.",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.athelas.com/enterprise/v1"
     }
-  }
+  ]
 }

@@ -1,1259 +1,1266 @@
 {
+  "info": {
+    "_postman_id": "beee807a-4976-458f-a2c3-4d953e21ff11",
+    "name": "Athelas Enterprise Patients API",
+    "description": "Athelas Enterprise Remote Patient Monitoring (RPM) API. Manage patients, sites, prescribers, RPM device shipping, and test results. Harvested verbatim from the per-operation OpenAPI blocks published on the Athelas ReadMe developer hub.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T01:24:58.000Z",
+    "updatedAt": "2026-10-22T01:24:58.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-beee807a-4976-458f-a2c3-4d953e21ff11"
+  },
   "item": [
     {
-      "id": "4bdc861f-7648-4879-8b5d-6a3fb63fc149",
-      "name": "Patients",
-      "description": {
-        "content": "",
-        "type": "text/plain"
-      },
+      "name": "patients",
       "item": [
         {
-          "id": "c82cb706-dcda-4a73-b5ca-6b000572a40b",
-          "name": "Create",
-          "request": {
-            "name": "Create",
-            "description": {
-              "content": "Create patients",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "patients",
-                "create"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"first_name\": \"Priyanka\",\n  \"last_name\": \"Mehta\",\n  \"site_id\": 524,\n  \"prescriber_id\": 4904,\n  \"gender\": \"F\",\n  \"phone_number\": \"14089259401\",\n  \"address\": \"160 S Whisman Rd, Mountain View, CA 94014\",\n  \"condition1\": \"I10\",\n  \"condition2\": \"I11\",\n  \"date_of_birth\": \"1991-10-11\",\n  \"insurance_company\": \"Aetna\",\n  \"insurance_policy_number\": \"W23423466\",\n  \"first_test\": \"BLOOD_PRESSURE\",\n  \"blood_pressure_test\": true,\n  \"weight_test\": false,\n  \"glucose_test\": false,\n  \"is_weight_blind\": false,\n  \"ship_rpm_devices\": false\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
+          "name": "create",
+          "item": [
             {
-              "id": "b35ce671-0032-43df-a686-89c3b257335e",
-              "name": "200",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "patients",
-                    "create"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+              "name": "Create",
+              "id": "e350b646-73da-4ea7-85ce-2381590f7b82",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
                   "raw": "{\n  \"first_name\": \"Priyanka\",\n  \"last_name\": \"Mehta\",\n  \"site_id\": 524,\n  \"prescriber_id\": 4904,\n  \"gender\": \"F\",\n  \"phone_number\": \"14089259401\",\n  \"address\": \"160 S Whisman Rd, Mountain View, CA 94014\",\n  \"condition1\": \"I10\",\n  \"condition2\": \"I11\",\n  \"date_of_birth\": \"1991-10-11\",\n  \"insurance_company\": \"Aetna\",\n  \"insurance_policy_number\": \"W23423466\",\n  \"first_test\": \"BLOOD_PRESSURE\",\n  \"blood_pressure_test\": true,\n  \"weight_test\": false,\n  \"glucose_test\": false,\n  \"is_weight_blind\": false,\n  \"ship_rpm_devices\": false\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{\\n   \\\"id\\\": 10,\\n   \\\"first_name\\\": \\\"Priyanka\\\",\\n   \\\"last_name\\\": \\\"Mehta\\\",\\n   \\\"site_id\\\": 524,\\n   \\\"prescriber_id\\\": 4904,\\n   \\\"gender\\\": \\\"F\\\",\\n   \\\"phone_number\\\": \\\"14089259401\\\",\\n   \\\"address\\\": \\\"160 S Whisman Rd, Mountain View, CA 94041\\\",\\n   \\\"address_valid\\\": \\\"True\\\",\\n   \\\"condition_1\\\": \\\"I10\\\",\\n   \\\"condition_2\\\": \\\"I11\\\",\\n   \\\"date_of_birth\\\": \\\"1991-10-11\\\",\\n   \\\"first_test\\\": \\\"BLOOD_PRESSURE\\\",\\n   \\\"blood_pressure_test\\\": true,\\n   \\\"weight_test\\\": false,\\n   \\\"glucose_test\\\": false,\\n   \\\"is_weight_blind\\\": false\\n}\\n\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "5a382389-7fef-4647-ae36-42d50e14e1ab",
-              "name": "400",
-              "originalRequest": {
+                },
                 "url": {
+                  "raw": "{{baseUrl}}/patients/create",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
                   "path": [
                     "patients",
                     "create"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
+                  ]
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"first_name\": \"Priyanka\",\n  \"last_name\": \"Mehta\",\n  \"site_id\": 524,\n  \"prescriber_id\": 4904,\n  \"gender\": \"F\",\n  \"phone_number\": \"14089259401\",\n  \"address\": \"160 S Whisman Rd, Mountain View, CA 94014\",\n  \"condition1\": \"I10\",\n  \"condition2\": \"I11\",\n  \"date_of_birth\": \"1991-10-11\",\n  \"insurance_company\": \"Aetna\",\n  \"insurance_policy_number\": \"W23423466\",\n  \"first_test\": \"BLOOD_PRESSURE\",\n  \"blood_pressure_test\": true,\n  \"weight_test\": false,\n  \"glucose_test\": false,\n  \"is_weight_blind\": false,\n  \"ship_rpm_devices\": false\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
+                "description": "Create patients"
               },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
+              "response": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
+                  "id": "22adacfd-c1a5-41b3-9517-72062fb5815d",
+                  "name": "200",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"first_name\": \"Priyanka\",\n  \"last_name\": \"Mehta\",\n  \"site_id\": 524,\n  \"prescriber_id\": 4904,\n  \"gender\": \"F\",\n  \"phone_number\": \"14089259401\",\n  \"address\": \"160 S Whisman Rd, Mountain View, CA 94014\",\n  \"condition1\": \"I10\",\n  \"condition2\": \"I11\",\n  \"date_of_birth\": \"1991-10-11\",\n  \"insurance_company\": \"Aetna\",\n  \"insurance_policy_number\": \"W23423466\",\n  \"first_test\": \"BLOOD_PRESSURE\",\n  \"blood_pressure_test\": true,\n  \"weight_test\": false,\n  \"glucose_test\": false,\n  \"is_weight_blind\": false,\n  \"ship_rpm_devices\": false\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/patients/create",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "patients",
+                        "create"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": 0,\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"site_id\": 0,\n  \"prescriber_id\": 0,\n  \"gender\": \"<string>\",\n  \"phone_number\": \"<string>\",\n  \"address\": \"<string>\",\n  \"address_valid\": \"<string>\",\n  \"condition_1\": \"<string>\",\n  \"condition_2\": \"<string>\",\n  \"date_of_birth\": \"<string>\",\n  \"first_test\": \"<string>\",\n  \"blood_pressure_test\": true,\n  \"weight_test\": true,\n  \"glucose_test\": true,\n  \"is_weight_blind\": true\n}",
+                  "createdAt": "2026-10-22T01:24:59.000Z",
+                  "updatedAt": "2026-10-22T01:24:59.000Z",
+                  "uid": "35240-22adacfd-c1a5-41b3-9517-72062fb5815d"
+                },
+                {
+                  "id": "798b0e9a-1e58-4cd8-8480-134317c48984",
+                  "name": "400",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"first_name\": \"Priyanka\",\n  \"last_name\": \"Mehta\",\n  \"site_id\": 524,\n  \"prescriber_id\": 4904,\n  \"gender\": \"F\",\n  \"phone_number\": \"14089259401\",\n  \"address\": \"160 S Whisman Rd, Mountain View, CA 94014\",\n  \"condition1\": \"I10\",\n  \"condition2\": \"I11\",\n  \"date_of_birth\": \"1991-10-11\",\n  \"insurance_company\": \"Aetna\",\n  \"insurance_policy_number\": \"W23423466\",\n  \"first_test\": \"BLOOD_PRESSURE\",\n  \"blood_pressure_test\": true,\n  \"weight_test\": false,\n  \"glucose_test\": false,\n  \"is_weight_blind\": false,\n  \"ship_rpm_devices\": false\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/patients/create",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "patients",
+                        "create"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-10-22T01:24:59.000Z",
+                  "updatedAt": "2026-10-22T01:24:59.000Z",
+                  "uid": "35240-798b0e9a-1e58-4cd8-8480-134317c48984"
                 }
               ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "createdAt": "2026-10-22T01:24:59.000Z",
+              "updatedAt": "2026-10-22T01:24:59.000Z",
+              "uid": "35240-e350b646-73da-4ea7-85ce-2381590f7b82"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "ee1b4ef8-35a7-4970-9b80-2244ca606bcd",
+          "createdAt": "2026-10-22T01:24:59.000Z",
+          "updatedAt": "2026-10-22T01:24:59.000Z",
+          "uid": "35240-ee1b4ef8-35a7-4970-9b80-2244ca606bcd"
         },
         {
-          "id": "da74cd75-bab0-47c5-a886-7a8b2467bb6f",
-          "name": "Update",
-          "request": {
-            "name": "Update",
-            "description": {
-              "content": "Update patient",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "patients",
-                ":id",
-                "update"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "10",
-                  "key": "id",
-                  "description": "(Required) ID of patient to be updated"
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"first_name\": \"Priyanka\",\n  \"last_name\": \"Mehta\",\n  \"site_id\": 524,\n  \"prescriber_id\": 4904,\n  \"gender\": \"F\",\n  \"phone_number\": \"14089259401\",\n  \"address\": \"160 S Whisman Rd, Mountain View, CA\",\n  \"condition_1\": \"I10\",\n  \"condition_2\": \"I11\",\n  \"date_of_birth\": \"1991-10-11\",\n  \"insurance_company\": \"Aetna\",\n  \"insurance_policy_number\": \"W23423466\",\n  \"first_test\": \"BLOOD_PRESSURE\",\n  \"blood_pressure_test\": true,\n  \"weight_test\": \"false\",\n  \"glucose_test\": \"false\",\n  \"is_weight_blind\": \"false\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
+          "name": "{id}",
+          "item": [
             {
-              "id": "07ba1119-16c1-4e20-9c4e-279bb581dd4d",
-              "name": "200",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "patients",
-                    ":id",
-                    "update"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "10",
-                      "key": "id",
-                      "description": "(Required) ID of patient to be updated"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
+              "name": "update",
+              "item": [
+                {
+                  "name": "Update",
+                  "id": "7a85f746-66bc-4f15-b59b-939cac6437f0",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
                   },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"first_name\": \"Priyanka\",\n  \"last_name\": \"Mehta\",\n  \"site_id\": 524,\n  \"prescriber_id\": 4904,\n  \"gender\": \"F\",\n  \"phone_number\": \"14089259401\",\n  \"address\": \"160 S Whisman Rd, Mountain View, CA\",\n  \"condition_1\": \"I10\",\n  \"condition_2\": \"I11\",\n  \"date_of_birth\": \"1991-10-11\",\n  \"insurance_company\": \"Aetna\",\n  \"insurance_policy_number\": \"W23423466\",\n  \"first_test\": \"BLOOD_PRESSURE\",\n  \"blood_pressure_test\": true,\n  \"weight_test\": \"false\",\n  \"glucose_test\": \"false\",\n  \"is_weight_blind\": \"false\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/patients/:id/update",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "patients",
+                        ":id",
+                        "update"
+                      ],
+                      "variable": [
+                        {
+                          "id": "57f2a49f-f283-4914-b5ab-daa382e4adce",
+                          "key": "id",
+                          "value": "10",
+                          "description": "(Required) ID of patient to be updated"
+                        }
+                      ]
+                    },
+                    "description": "Update patient"
+                  },
+                  "response": [
+                    {
+                      "id": "5eab7f9e-54fa-4b61-aa76-542969b25ba9",
+                      "name": "200",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"first_name\": \"Priyanka\",\n  \"last_name\": \"Mehta\",\n  \"site_id\": 524,\n  \"prescriber_id\": 4904,\n  \"gender\": \"F\",\n  \"phone_number\": \"14089259401\",\n  \"address\": \"160 S Whisman Rd, Mountain View, CA\",\n  \"condition_1\": \"I10\",\n  \"condition_2\": \"I11\",\n  \"date_of_birth\": \"1991-10-11\",\n  \"insurance_company\": \"Aetna\",\n  \"insurance_policy_number\": \"W23423466\",\n  \"first_test\": \"BLOOD_PRESSURE\",\n  \"blood_pressure_test\": true,\n  \"weight_test\": \"false\",\n  \"glucose_test\": \"false\",\n  \"is_weight_blind\": \"false\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/patients/:id/update",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "patients",
+                            ":id",
+                            "update"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": 0,\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"site_id\": 0,\n  \"prescriber_id\": 0,\n  \"gender\": \"<string>\",\n  \"phone_number\": \"<string>\",\n  \"address\": \"<string>\",\n  \"address_valid\": \"<string>\",\n  \"condition_1\": \"<string>\",\n  \"condition_2\": \"<string>\",\n  \"date_of_birth\": \"<string>\",\n  \"first_test\": \"<string>\",\n  \"blood_pressure_test\": true,\n  \"weight_test\": true,\n  \"glucose_test\": true,\n  \"is_weight_blind\": true\n}",
+                      "createdAt": "2026-10-22T01:24:59.000Z",
+                      "updatedAt": "2026-10-22T01:24:59.000Z",
+                      "uid": "35240-5eab7f9e-54fa-4b61-aa76-542969b25ba9"
+                    },
+                    {
+                      "id": "5db3efe5-176f-4486-baba-1d618eb9c15d",
+                      "name": "400",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"first_name\": \"Priyanka\",\n  \"last_name\": \"Mehta\",\n  \"site_id\": 524,\n  \"prescriber_id\": 4904,\n  \"gender\": \"F\",\n  \"phone_number\": \"14089259401\",\n  \"address\": \"160 S Whisman Rd, Mountain View, CA\",\n  \"condition_1\": \"I10\",\n  \"condition_2\": \"I11\",\n  \"date_of_birth\": \"1991-10-11\",\n  \"insurance_company\": \"Aetna\",\n  \"insurance_policy_number\": \"W23423466\",\n  \"first_test\": \"BLOOD_PRESSURE\",\n  \"blood_pressure_test\": true,\n  \"weight_test\": \"false\",\n  \"glucose_test\": \"false\",\n  \"is_weight_blind\": \"false\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/patients/:id/update",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "patients",
+                            ":id",
+                            "update"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-10-22T01:24:59.000Z",
+                      "updatedAt": "2026-10-22T01:24:59.000Z",
+                      "uid": "35240-5db3efe5-176f-4486-baba-1d618eb9c15d"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T01:24:59.000Z",
+                  "updatedAt": "2026-10-22T01:24:59.000Z",
+                  "uid": "35240-7a85f746-66bc-4f15-b59b-939cac6437f0"
+                }
+              ],
+              "id": "145be8a1-24d4-4832-8766-03d6d93d5cd8",
+              "createdAt": "2026-10-22T01:24:59.000Z",
+              "updatedAt": "2026-10-22T01:24:59.000Z",
+              "uid": "35240-145be8a1-24d4-4832-8766-03d6d93d5cd8"
+            },
+            {
+              "name": "activate",
+              "item": [
+                {
+                  "name": "Activate",
+                  "id": "d7d385ce-cb66-46ec-82c1-c1e7b517cb51",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/patients/:id/activate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "patients",
+                        ":id",
+                        "activate"
+                      ],
+                      "variable": [
+                        {
+                          "id": "f50e867a-be08-4ce7-98c5-de42632757a7",
+                          "key": "id",
+                          "value": "625",
+                          "description": "(Required) ID of the patient to activate"
+                        }
+                      ]
+                    },
+                    "description": "Activate a patient."
+                  },
+                  "response": [
+                    {
+                      "id": "6b6c500d-38c3-493b-a15d-2dcf01c45c3e",
+                      "name": "200",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/patients/:id/activate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "patients",
+                            ":id",
+                            "activate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-10-22T01:24:59.000Z",
+                      "updatedAt": "2026-10-22T01:24:59.000Z",
+                      "uid": "35240-6b6c500d-38c3-493b-a15d-2dcf01c45c3e"
+                    },
+                    {
+                      "id": "f9d8b0e2-6e92-484d-8c9f-e163b5b286d2",
+                      "name": "400",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/patients/:id/activate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "patients",
+                            ":id",
+                            "activate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-10-22T01:24:59.000Z",
+                      "updatedAt": "2026-10-22T01:24:59.000Z",
+                      "uid": "35240-f9d8b0e2-6e92-484d-8c9f-e163b5b286d2"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T01:24:59.000Z",
+                  "updatedAt": "2026-10-22T01:24:59.000Z",
+                  "uid": "35240-d7d385ce-cb66-46ec-82c1-c1e7b517cb51"
+                }
+              ],
+              "id": "74cf93e6-69fd-43ff-85e0-90f5201c27c4",
+              "createdAt": "2026-10-22T01:24:59.000Z",
+              "updatedAt": "2026-10-22T01:24:59.000Z",
+              "uid": "35240-74cf93e6-69fd-43ff-85e0-90f5201c27c4"
+            },
+            {
+              "name": "deactivate",
+              "item": [
+                {
+                  "name": "Deactivate",
+                  "id": "bbe66cc7-2fee-4587-bbea-3fa07209a428",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/patients/:id/deactivate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "patients",
+                        ":id",
+                        "deactivate"
+                      ],
+                      "variable": [
+                        {
+                          "id": "2d033acd-bd96-468e-9782-640b417b1ca4",
+                          "key": "id",
+                          "value": "543",
+                          "description": "(Required) ID of patient to deactivate"
+                        }
+                      ]
+                    },
+                    "description": "Deactivate a patient. This ensures the following will happen: The patient will be removed from all enrollment flows. No further messages will go out to the given patient."
+                  },
+                  "response": [
+                    {
+                      "id": "0b4f595b-7b4e-40ec-becc-bddc52204477",
+                      "name": "200",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/patients/:id/deactivate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "patients",
+                            ":id",
+                            "deactivate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-10-22T01:24:59.000Z",
+                      "updatedAt": "2026-10-22T01:24:59.000Z",
+                      "uid": "35240-0b4f595b-7b4e-40ec-becc-bddc52204477"
+                    },
+                    {
+                      "id": "740f260a-7f40-470f-852a-f4ca4c852b22",
+                      "name": "400",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/patients/:id/deactivate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "patients",
+                            ":id",
+                            "deactivate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-10-22T01:24:59.000Z",
+                      "updatedAt": "2026-10-22T01:24:59.000Z",
+                      "uid": "35240-740f260a-7f40-470f-852a-f4ca4c852b22"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T01:24:59.000Z",
+                  "updatedAt": "2026-10-22T01:24:59.000Z",
+                  "uid": "35240-bbe66cc7-2fee-4587-bbea-3fa07209a428"
+                }
+              ],
+              "id": "a9fcf03e-77bb-48b9-95b2-a0ea53750bbd",
+              "createdAt": "2026-10-22T01:24:59.000Z",
+              "updatedAt": "2026-10-22T01:24:59.000Z",
+              "uid": "35240-a9fcf03e-77bb-48b9-95b2-a0ea53750bbd"
+            },
+            {
+              "name": "test_results",
+              "item": [
+                {
+                  "name": "View Test Results",
+                  "id": "992ac330-3482-42c1-9e2e-f2dc941d23f9",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/patients/:id/test_results",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "patients",
+                        ":id",
+                        "test_results"
+                      ],
+                      "variable": [
+                        {
+                          "id": "9d2dac4c-6f88-4e70-adc5-56892fe4a1df",
+                          "key": "id",
+                          "value": "524",
+                          "description": "(Required) ID of the patient for which the results are being queried"
+                        }
+                      ]
+                    },
+                    "description": "View all the test results for a given patient. The list is sorted by most recent first."
+                  },
+                  "response": [
+                    {
+                      "id": "286bcefd-6f12-401f-92a7-9480d28f2a09",
+                      "name": "300",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/patients/:id/test_results",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "patients",
+                            ":id",
+                            "test_results"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Multiple Choices",
+                      "code": 300,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"examples\": {\n    \"Result\": {\n      \"value\": \"{\\n   \\\"id\\\": 10,\\n   \\\"patient_id\\\": 25,\\n   \\\"test_type\\\": \\\"BLOOD_PRESSURE\\\",\\n   \\\"systolic\\\": 120,\\n   \\\"diastolic\\\": 80,\\n   \\\"units\\\": \\\"mmHg\\\",\\n   \\\"created_at\\\": \\\"2021-10-12 01:52:30.612685\\\"\\n},\\n{\\n   \\\"id\\\": 11,\\n   \\\"patient_id\\\": 25,\\n   \\\"test_type\\\": \\\"WEIGHT\\\",\\n   \\\"weight\\\": 95,\\n   \\\"units\\\": \\\"pounds\\\",\\n   \\\"created_at\\\": \\\"2021-10-12 01:52:30.612685\\\"\\n},\\n{\\n   \\\"id\\\": 12,\\n   \\\"patient_id\\\": 25,\\n   \\\"test_type\\\": \\\"GLUCOSE\\\",\\n   \\\"blood_glucose\\\": \\\"10\\\",\\n   \\\"units\\\": \\\"mmol/L\\\",\\n   \\\"created_at\\\": \\\"2021-10-12 01:52:30.612685\\\"\\n}\\n\"\n    }\n  }\n}",
+                      "createdAt": "2026-10-22T01:24:59.000Z",
+                      "updatedAt": "2026-10-22T01:24:59.000Z",
+                      "uid": "35240-286bcefd-6f12-401f-92a7-9480d28f2a09"
+                    },
+                    {
+                      "id": "defcd0ad-b6f3-4a00-afc4-bea40f0cc6bc",
+                      "name": "400",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/patients/:id/test_results",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "patients",
+                            ":id",
+                            "test_results"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-10-22T01:24:59.000Z",
+                      "updatedAt": "2026-10-22T01:24:59.000Z",
+                      "uid": "35240-defcd0ad-b6f3-4a00-afc4-bea40f0cc6bc"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T01:24:59.000Z",
+                  "updatedAt": "2026-10-22T01:24:59.000Z",
+                  "uid": "35240-992ac330-3482-42c1-9e2e-f2dc941d23f9"
+                }
+              ],
+              "id": "e137ec77-24a5-4fd9-b1fb-76aeaf7a2dc3",
+              "createdAt": "2026-10-22T01:24:59.000Z",
+              "updatedAt": "2026-10-22T01:24:59.000Z",
+              "uid": "35240-e137ec77-24a5-4fd9-b1fb-76aeaf7a2dc3"
+            },
+            {
+              "name": "verify_address",
+              "item": [
+                {
+                  "name": "Verify Address",
+                  "id": "7379e3fd-951a-44c7-92c9-5dc595ce74e7",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/patients/:id/verify_address",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "patients",
+                        ":id",
+                        "verify_address"
+                      ],
+                      "variable": [
+                        {
+                          "id": "25bf540e-a1a1-4207-a12a-6cac5cc7f1a2",
+                          "key": "id",
+                          "value": "524",
+                          "description": "(Required) Patient ID"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "2c32cc0f-da6c-4b4a-bc7f-7c9ee15e02ea",
+                      "name": "200",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/patients/:id/verify_address",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "patients",
+                            ":id",
+                            "verify_address"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"message\": \"<string>\"\n}",
+                      "createdAt": "2026-10-22T01:24:59.000Z",
+                      "updatedAt": "2026-10-22T01:24:59.000Z",
+                      "uid": "35240-2c32cc0f-da6c-4b4a-bc7f-7c9ee15e02ea"
+                    },
+                    {
+                      "id": "45bd438b-f184-4cf3-b125-677b92ce8691",
+                      "name": "400",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/patients/:id/verify_address",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "patients",
+                            ":id",
+                            "verify_address"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-10-22T01:24:59.000Z",
+                      "updatedAt": "2026-10-22T01:24:59.000Z",
+                      "uid": "35240-45bd438b-f184-4cf3-b125-677b92ce8691"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T01:24:59.000Z",
+                  "updatedAt": "2026-10-22T01:24:59.000Z",
+                  "uid": "35240-7379e3fd-951a-44c7-92c9-5dc595ce74e7"
+                }
+              ],
+              "id": "f0f8fea3-6c8c-43dc-98a2-41edb1965703",
+              "createdAt": "2026-10-22T01:24:59.000Z",
+              "updatedAt": "2026-10-22T01:24:59.000Z",
+              "uid": "35240-f0f8fea3-6c8c-43dc-98a2-41edb1965703"
+            },
+            {
+              "name": "address_verified",
+              "item": [
+                {
+                  "name": "Address Verified",
+                  "id": "beb63d23-7e6e-4264-b315-7b2046ebde3c",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/patients/:id/address_verified",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "patients",
+                        ":id",
+                        "address_verified"
+                      ],
+                      "variable": [
+                        {
+                          "id": "01ec7dd0-9bdb-4fbc-a8ba-28c99ca6c9ee",
+                          "key": "id",
+                          "value": "524",
+                          "description": "(Required) Patient ID"
+                        }
+                      ]
+                    },
+                    "description": "Check if the address verification that you queued manually has been successful"
+                  },
+                  "response": [
+                    {
+                      "id": "aa914dc3-5f91-4b18-ba01-006afd6a56ed",
+                      "name": "200",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/patients/:id/address_verified",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "patients",
+                            ":id",
+                            "address_verified"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"address_verified\": true\n}",
+                      "createdAt": "2026-10-22T01:24:59.000Z",
+                      "updatedAt": "2026-10-22T01:24:59.000Z",
+                      "uid": "35240-aa914dc3-5f91-4b18-ba01-006afd6a56ed"
+                    },
+                    {
+                      "id": "561a9606-103b-4ccd-ac0f-7b08eadd9f6f",
+                      "name": "400",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/patients/:id/address_verified",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "patients",
+                            ":id",
+                            "address_verified"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-10-22T01:24:59.000Z",
+                      "updatedAt": "2026-10-22T01:24:59.000Z",
+                      "uid": "35240-561a9606-103b-4ccd-ac0f-7b08eadd9f6f"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T01:24:59.000Z",
+                  "updatedAt": "2026-10-22T01:24:59.000Z",
+                  "uid": "35240-beb63d23-7e6e-4264-b315-7b2046ebde3c"
+                }
+              ],
+              "id": "8d851466-78b3-4f54-b2e7-38de59b70602",
+              "createdAt": "2026-10-22T01:24:59.000Z",
+              "updatedAt": "2026-10-22T01:24:59.000Z",
+              "uid": "35240-8d851466-78b3-4f54-b2e7-38de59b70602"
+            },
+            {
+              "name": "Get",
+              "id": "4aeabca2-aea6-4796-95ee-9f666ebc82b6",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
                   {
                     "key": "Accept",
                     "value": "application/json"
                   }
                 ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"first_name\": \"Priyanka\",\n  \"last_name\": \"Mehta\",\n  \"site_id\": 524,\n  \"prescriber_id\": 4904,\n  \"gender\": \"F\",\n  \"phone_number\": \"14089259401\",\n  \"address\": \"160 S Whisman Rd, Mountain View, CA\",\n  \"condition_1\": \"I10\",\n  \"condition_2\": \"I11\",\n  \"date_of_birth\": \"1991-10-11\",\n  \"insurance_company\": \"Aetna\",\n  \"insurance_policy_number\": \"W23423466\",\n  \"first_test\": \"BLOOD_PRESSURE\",\n  \"blood_pressure_test\": true,\n  \"weight_test\": \"false\",\n  \"glucose_test\": \"false\",\n  \"is_weight_blind\": \"false\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{\\n   \\\"id\\\": 10,\\n   \\\"first_name\\\": \\\"Priyanka\\\",\\n   \\\"last_name\\\": \\\"Mehta\\\",\\n   \\\"site_id\\\": 524,\\n   \\\"prescriber_id\\\": 4904,\\n   \\\"gender\\\": \\\"F\\\",\\n   \\\"phone_number\\\": \\\"14089259401\\\",\\n   \\\"address\\\": \\\"160 S Whisman Rd, Mountain View, CA 94041\\\",\\n   \\\"address_valid\\\": \\\"True\\\",\\n   \\\"condition_1\\\": \\\"I10\\\",\\n   \\\"condition_2\\\": \\\"I11\\\",\\n   \\\"date_of_birth\\\": \\\"1991-10-11\\\",\\n   \\\"first_test\\\": \\\"BLOOD_PRESSURE\\\",\\n   \\\"blood_pressure_test\\\": true,\\n   \\\"weight_test\\\": false,\\n   \\\"glucose_test\\\": false,\\n   \\\"is_weight_blind\\\": false\\n}\\n\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "d231c23e-31bc-49c4-b86b-d795e61289d3",
-              "name": "400",
-              "originalRequest": {
                 "url": {
-                  "path": [
-                    "patients",
-                    ":id",
-                    "update"
-                  ],
+                  "raw": "{{baseUrl}}/patients/:id",
                   "host": [
                     "{{baseUrl}}"
                   ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "10",
-                      "key": "id",
-                      "description": "(Required) ID of patient to be updated"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"first_name\": \"Priyanka\",\n  \"last_name\": \"Mehta\",\n  \"site_id\": 524,\n  \"prescriber_id\": 4904,\n  \"gender\": \"F\",\n  \"phone_number\": \"14089259401\",\n  \"address\": \"160 S Whisman Rd, Mountain View, CA\",\n  \"condition_1\": \"I10\",\n  \"condition_2\": \"I11\",\n  \"date_of_birth\": \"1991-10-11\",\n  \"insurance_company\": \"Aetna\",\n  \"insurance_policy_number\": \"W23423466\",\n  \"first_test\": \"BLOOD_PRESSURE\",\n  \"blood_pressure_test\": true,\n  \"weight_test\": \"false\",\n  \"glucose_test\": \"false\",\n  \"is_weight_blind\": \"false\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "cb848e1a-aa5d-417f-9d46-7196697f45a5",
-          "name": "Activate",
-          "request": {
-            "name": "Activate",
-            "description": {
-              "content": "Activate a patient.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "patients",
-                ":id",
-                "activate"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "625",
-                  "key": "id",
-                  "description": "(Required) ID of the patient to activate"
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "0bc11403-d66a-4efc-b14d-75b10685820f",
-              "name": "200",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "patients",
-                    ":id",
-                    "activate"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "625",
-                      "key": "id",
-                      "description": "(Required) ID of the patient to activate"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "c9f8294c-412c-45ed-b841-d961b5113a00",
-              "name": "400",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "patients",
-                    ":id",
-                    "activate"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "625",
-                      "key": "id",
-                      "description": "(Required) ID of the patient to activate"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {}
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "debc541c-dfeb-440e-aa7b-2996a9932847",
-          "name": "Deactivate",
-          "request": {
-            "name": "Deactivate",
-            "description": {
-              "content": "Deactivate a patient. This ensures the following will happen: The patient will be removed from all enrollment flows. No further messages will go out to the given patient.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "patients",
-                ":id",
-                "deactivate"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "543",
-                  "key": "id",
-                  "description": "(Required) ID of patient to deactivate"
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "7a303914-f5cf-4544-a6c7-110cd1b560f3",
-              "name": "200",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "patients",
-                    ":id",
-                    "deactivate"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "543",
-                      "key": "id",
-                      "description": "(Required) ID of patient to deactivate"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "d4ebfeb8-33a2-47a4-acea-b6361058daef",
-              "name": "400",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "patients",
-                    ":id",
-                    "deactivate"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "543",
-                      "key": "id",
-                      "description": "(Required) ID of patient to deactivate"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {}
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "36481e6f-e318-4057-9336-866482d00d50",
-          "name": "Get",
-          "request": {
-            "name": "Get",
-            "description": {
-              "content": "Fetch the patient object",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "patients",
-                ":id"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<integer>",
-                  "key": "id",
-                  "description": "(Required) ID of Patient to fetch Patient object for"
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "8fc36d5f-4bed-4d05-aefa-093bd5f311f1",
-              "name": "200",
-              "originalRequest": {
-                "url": {
                   "path": [
                     "patients",
                     ":id"
                   ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
                   "variable": [
                     {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<integer>",
+                      "id": "71510bc1-48e3-4ba1-9bef-aa515097ac36",
                       "key": "id",
+                      "value": "<integer>",
                       "description": "(Required) ID of Patient to fetch Patient object for"
                     }
                   ]
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                "description": "Fetch the patient object"
               },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "response": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{\\n  \\\"id\\\": 10,\\n  \\\"first_name\\\": \\\"John\\\",\\n  \\\"last_name\\\": \\\"Smith\\\",\\n  \\\"site_id\\\": 245,\\n  \\\"prescriber_id\\\": 23,\\n  \\\"gender\\\": \\\"M\\\",\\n  \\\"phone_number\\\": \\\"14088962343\\\",\\n  \\\"address\\\": \\\"160 S Whisman Rd, Mountain View, CA 94041\\\",\\n  \\\"address_valid\\\": \\\"True\\\",\\n  \\\"condition_1\\\": \\\"I10\\\",\\n  \\\"condition_2\\\": \\\"I11\\\",\\n  \\\"date_of_birth\\\": \\\"1991-10-11\\\",\\n  \\\"first_test\\\": \\\"BLOOD_PRESSURE\\\",\\n  \\\"blood_pressure_test\\\": true,\\n  \\\"weight_test\\\": true,\\n  \\\"glucose_test\\\": false,\\n  \\\"is_weight_blind\\\": false,\\n}\\n\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "6bda3ed5-a935-487c-b014-0ee455f70e05",
-              "name": "400",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "patients",
-                    ":id"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<integer>",
-                      "key": "id",
-                      "description": "(Required) ID of Patient to fetch Patient object for"
+                  "id": "d777d3d8-054e-4420-8c25-5e9b06e6f140",
+                  "name": "200",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/patients/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "patients",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
                     }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
                   },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"examples\": {\n    \"Result\": {\n      \"value\": \"{\\n  \\\"id\\\": 10,\\n  \\\"first_name\\\": \\\"John\\\",\\n  \\\"last_name\\\": \\\"Smith\\\",\\n  \\\"site_id\\\": 245,\\n  \\\"prescriber_id\\\": 23,\\n  \\\"gender\\\": \\\"M\\\",\\n  \\\"phone_number\\\": \\\"14088962343\\\",\\n  \\\"address\\\": \\\"160 S Whisman Rd, Mountain View, CA 94041\\\",\\n  \\\"address_valid\\\": \\\"True\\\",\\n  \\\"condition_1\\\": \\\"I10\\\",\\n  \\\"condition_2\\\": \\\"I11\\\",\\n  \\\"date_of_birth\\\": \\\"1991-10-11\\\",\\n  \\\"first_test\\\": \\\"BLOOD_PRESSURE\\\",\\n  \\\"blood_pressure_test\\\": true,\\n  \\\"weight_test\\\": true,\\n  \\\"glucose_test\\\": false,\\n  \\\"is_weight_blind\\\": false,\\n}\\n\"\n    }\n  }\n}",
+                  "createdAt": "2026-10-22T01:24:59.000Z",
+                  "updatedAt": "2026-10-22T01:24:59.000Z",
+                  "uid": "35240-d777d3d8-054e-4420-8c25-5e9b06e6f140"
+                },
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
+                  "id": "9c248a4f-27a1-4442-bfa6-218e488231d9",
+                  "name": "400",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/patients/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "patients",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-10-22T01:24:59.000Z",
+                  "updatedAt": "2026-10-22T01:24:59.000Z",
+                  "uid": "35240-9c248a4f-27a1-4442-bfa6-218e488231d9"
                 }
               ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "createdAt": "2026-10-22T01:24:59.000Z",
+              "updatedAt": "2026-10-22T01:24:59.000Z",
+              "uid": "35240-4aeabca2-aea6-4796-95ee-9f666ebc82b6"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "1a1cc1e1-84c0-4d3a-beb7-d4a0ced33ea7",
-          "name": "View Test Results",
-          "request": {
-            "name": "View Test Results",
-            "description": {
-              "content": "View all the test results for a given patient. The list is sorted by most recent first.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "patients",
-                ":id",
-                "test_results"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "524",
-                  "key": "id",
-                  "description": "(Required) ID of the patient for which the results are being queried"
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "e644ba17-90fd-4d4b-9ce3-ead529d805ea",
-              "name": "300",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "patients",
-                    ":id",
-                    "test_results"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "524",
-                      "key": "id",
-                      "description": "(Required) ID of the patient for which the results are being queried"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Multiple Choices",
-              "code": 300,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{\\n   \\\"id\\\": 10,\\n   \\\"patient_id\\\": 25,\\n   \\\"test_type\\\": \\\"BLOOD_PRESSURE\\\",\\n   \\\"systolic\\\": 120,\\n   \\\"diastolic\\\": 80,\\n   \\\"units\\\": \\\"mmHg\\\",\\n   \\\"created_at\\\": \\\"2021-10-12 01:52:30.612685\\\"\\n},\\n{\\n   \\\"id\\\": 11,\\n   \\\"patient_id\\\": 25,\\n   \\\"test_type\\\": \\\"WEIGHT\\\",\\n   \\\"weight\\\": 95,\\n   \\\"units\\\": \\\"pounds\\\",\\n   \\\"created_at\\\": \\\"2021-10-12 01:52:30.612685\\\"\\n},\\n{\\n   \\\"id\\\": 12,\\n   \\\"patient_id\\\": 25,\\n   \\\"test_type\\\": \\\"GLUCOSE\\\",\\n   \\\"blood_glucose\\\": \\\"10\\\",\\n   \\\"units\\\": \\\"mmol/L\\\",\\n   \\\"created_at\\\": \\\"2021-10-12 01:52:30.612685\\\"\\n}\\n\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "765fd971-ad23-4e6f-be13-c15d052af946",
-              "name": "400",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "patients",
-                    ":id",
-                    "test_results"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "524",
-                      "key": "id",
-                      "description": "(Required) ID of the patient for which the results are being queried"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "1525e172-bc89-4d0a-b5c0-d14b07463ac8",
-          "name": "Verify Address",
-          "request": {
-            "name": "Verify Address",
-            "description": {
-              "content": "",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "patients",
-                ":id",
-                "verify_address"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "524",
-                  "key": "id",
-                  "description": "(Required) Patient ID"
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "a14c5b9e-c70c-4584-bd19-bacf88c67233",
-              "name": "200",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "patients",
-                    ":id",
-                    "verify_address"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "524",
-                      "key": "id",
-                      "description": "(Required) Patient ID"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{\\n  \\\"message\\\": \\\"Queued address verification. Check /address_verified to see updated address verification status.\\\"\\n}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "973de2dc-b174-46e7-9fd8-6b52e159f190",
-              "name": "400",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "patients",
-                    ":id",
-                    "verify_address"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "524",
-                      "key": "id",
-                      "description": "(Required) Patient ID"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {}
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "9e510bcf-341d-41ee-8231-bf00bdd4238f",
-          "name": "Address Verified",
-          "request": {
-            "name": "Address Verified",
-            "description": {
-              "content": "Check if the address verification that you queued manually has been successful",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "patients",
-                ":id",
-                "address_verified"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "524",
-                  "key": "id",
-                  "description": "(Required) Patient ID"
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "731cc671-2475-4e63-8f5a-ce16fd08e1ae",
-              "name": "200",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "patients",
-                    ":id",
-                    "address_verified"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "524",
-                      "key": "id",
-                      "description": "(Required) Patient ID"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{\\n\\t\\\"address_verified\\\": true\\n}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "38065ef4-6f94-44cc-b25a-6e46c567d7b3",
-              "name": "400",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "patients",
-                    ":id",
-                    "address_verified"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "524",
-                      "key": "id",
-                      "description": "(Required) Patient ID"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "ff02f623-a4db-4edb-9fb6-52b79647be77",
+          "createdAt": "2026-10-22T01:24:59.000Z",
+          "updatedAt": "2026-10-22T01:24:59.000Z",
+          "uid": "35240-ff02f623-a4db-4edb-9fb6-52b79647be77"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://api.athelas.com/enterprise/v1",
-      "key": "baseUrl"
+      "id": "fbccc641-9f33-47da-8727-66384dfbe968",
+      "createdAt": "2026-10-22T01:24:59.000Z",
+      "updatedAt": "2026-10-22T01:24:59.000Z",
+      "uid": "35240-fbccc641-9f33-47da-8727-66384dfbe968"
     }
   ],
   "auth": {
@@ -1261,17 +1268,15 @@
     "bearer": [
       {
         "key": "token",
-        "value": "{{bearerToken}}"
+        "value": "{{bearerToken}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "469a2e8f-3930-4772-8f96-fe25c36e7c01",
-    "name": "Athelas Enterprise Auth Patients API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "Athelas Enterprise Remote Patient Monitoring (RPM) API. Manage patients, sites, prescribers, RPM device shipping, and test results. Harvested verbatim from the per-operation OpenAPI blocks published on the Athelas ReadMe developer hub.",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.athelas.com/enterprise/v1"
     }
-  }
+  ]
 }

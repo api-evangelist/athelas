@@ -1,504 +1,527 @@
 {
+  "info": {
+    "_postman_id": "9a574551-3420-4e42-b6e5-645a59052f3f",
+    "name": "Athelas Enterprise Prescribers API",
+    "description": "Athelas Enterprise Remote Patient Monitoring (RPM) API. Manage patients, sites, prescribers, RPM device shipping, and test results. Harvested verbatim from the per-operation OpenAPI blocks published on the Athelas ReadMe developer hub.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T01:25:03.000Z",
+    "updatedAt": "2026-10-22T01:25:03.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9a574551-3420-4e42-b6e5-645a59052f3f"
+  },
   "item": [
     {
-      "id": "ab0d7684-1b3e-411c-b9d9-6024992fb230",
-      "name": "Prescribers",
-      "description": {
-        "content": "",
-        "type": "text/plain"
-      },
+      "name": "prescribers",
       "item": [
         {
-          "id": "7bf09e0c-4ff1-43f2-a598-1fcf5f658448",
-          "name": "Create",
-          "request": {
-            "name": "Create",
-            "description": {
-              "content": "Create a prescriber object. A prescriber is the doctor for a given patient.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "prescribers",
-                "create"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"first_name\": \"John\",\n  \"last_name\": \"Smith\",\n  \"title\": \"N.P.\",\n  \"npi\": \"1245319592\",\n  \"site_ids\": [\n    null,\n    null\n  ]\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
+          "name": "create",
+          "item": [
             {
-              "id": "ddddd3ec-9f30-4f00-b893-8d1ce6d6a1e4",
-              "name": "200",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "prescribers",
-                    "create"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+              "name": "Create",
+              "id": "b30f3875-78c0-4118-9b93-98cfc0a635e1",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
                   "raw": "{\n  \"first_name\": \"John\",\n  \"last_name\": \"Smith\",\n  \"title\": \"N.P.\",\n  \"npi\": \"1245319592\",\n  \"site_ids\": [\n    null,\n    null\n  ]\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{\\n   \\\"id\\\": 234,\\n   \\\"first_name\\\": \\\"John\\\",\\n   \\\"last_name\\\": \\\"Smith\\\",\\n   \\\"title\\\": \\\"N.P.\\\",\\n   \\\"npi\\\": \\\"1245319592\\\",\\n   \\\"site_ids\\\": [45,12]\\n}\\n\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "fff11e90-1035-4eb4-9a68-f51473077e1a",
-              "name": "400",
-              "originalRequest": {
+                },
                 "url": {
+                  "raw": "{{baseUrl}}/prescribers/create",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
                   "path": [
                     "prescribers",
                     "create"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"first_name\": \"John\",\n  \"last_name\": \"Smith\",\n  \"title\": \"N.P.\",\n  \"npi\": \"1245319592\",\n  \"site_ids\": [\n    null,\n    null\n  ]\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "20d448dc-ad2b-4882-ba3f-e76d01507686",
-          "name": "Update",
-          "request": {
-            "name": "Update",
-            "description": {
-              "content": "Create a prescriber object. A prescriber is the doctor for a given patient. At least one site must be created before a prescriber is created; they are associated with sites.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "prescribers",
-                ":id",
-                "update"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "234",
-                  "key": "id",
-                  "description": "(Required) ID of the prescriber that will be updated"
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"first_name\": \"John\",\n  \"last_name\": \"Smith\",\n  \"title\": \"N.P.\",\n  \"npi\": \"1245319592\",\n  \"site_id\": 45\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "b9c20ff7-0b7d-4543-b9ee-94905fc222f2",
-              "name": "200",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "prescribers",
-                    ":id",
-                    "update"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "234",
-                      "key": "id",
-                      "description": "(Required) ID of the prescriber that will be updated"
-                    }
                   ]
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
+                "description": "Create a prescriber object. A prescriber is the doctor for a given patient."
+              },
+              "response": [
+                {
+                  "id": "b8f61655-270c-4131-88d1-f6c49ec1ba39",
+                  "name": "200",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"first_name\": \"John\",\n  \"last_name\": \"Smith\",\n  \"title\": \"N.P.\",\n  \"npi\": \"1245319592\",\n  \"site_ids\": [\n    null,\n    null\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
                     },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
+                    "url": {
+                      "raw": "{{baseUrl}}/prescribers/create",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "prescribers",
+                        "create"
+                      ]
+                    }
                   },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": 0,\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"title\": \"<string>\",\n  \"npi\": \"<string>\",\n  \"site_ids\": [\n    0,\n    0\n  ]\n}",
+                  "createdAt": "2026-10-22T01:25:04.000Z",
+                  "updatedAt": "2026-10-22T01:25:04.000Z",
+                  "uid": "35240-b8f61655-270c-4131-88d1-f6c49ec1ba39"
+                },
+                {
+                  "id": "fc571f20-dfbc-4dea-bcd0-7bc7699e4f7e",
+                  "name": "400",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"first_name\": \"John\",\n  \"last_name\": \"Smith\",\n  \"title\": \"N.P.\",\n  \"npi\": \"1245319592\",\n  \"site_ids\": [\n    null,\n    null\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/prescribers/create",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "prescribers",
+                        "create"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-10-22T01:25:04.000Z",
+                  "updatedAt": "2026-10-22T01:25:04.000Z",
+                  "uid": "35240-fc571f20-dfbc-4dea-bcd0-7bc7699e4f7e"
+                }
+              ],
+              "createdAt": "2026-10-22T01:25:04.000Z",
+              "updatedAt": "2026-10-22T01:25:04.000Z",
+              "uid": "35240-b30f3875-78c0-4118-9b93-98cfc0a635e1"
+            }
+          ],
+          "id": "2fd31470-d3de-4256-acdc-ba8b9e94b6a1",
+          "createdAt": "2026-10-22T01:25:04.000Z",
+          "updatedAt": "2026-10-22T01:25:04.000Z",
+          "uid": "35240-2fd31470-d3de-4256-acdc-ba8b9e94b6a1"
+        },
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "update",
+              "item": [
+                {
+                  "name": "Update",
+                  "id": "7a113def-3e71-48e7-9bf0-d8a10d6e2fa2",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"first_name\": \"John\",\n  \"last_name\": \"Smith\",\n  \"title\": \"N.P.\",\n  \"npi\": \"1245319592\",\n  \"site_id\": 45\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/prescribers/:id/update",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "prescribers",
+                        ":id",
+                        "update"
+                      ],
+                      "variable": [
+                        {
+                          "id": "2758a6f3-c0f7-4d12-aa70-2678cd66af5e",
+                          "key": "id",
+                          "value": "234",
+                          "description": "(Required) ID of the prescriber that will be updated"
+                        }
+                      ]
+                    },
+                    "description": "Create a prescriber object. A prescriber is the doctor for a given patient. At least one site must be created before a prescriber is created; they are associated with sites."
+                  },
+                  "response": [
+                    {
+                      "id": "a8277c31-897e-4cf3-b27f-3afbd3ea5327",
+                      "name": "200",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"first_name\": \"John\",\n  \"last_name\": \"Smith\",\n  \"title\": \"N.P.\",\n  \"npi\": \"1245319592\",\n  \"site_id\": 45\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/prescribers/:id/update",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "prescribers",
+                            ":id",
+                            "update"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": 0,\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"title\": \"<string>\",\n  \"npi\": \"<string>\",\n  \"site_id\": 0\n}",
+                      "createdAt": "2026-10-22T01:25:04.000Z",
+                      "updatedAt": "2026-10-22T01:25:04.000Z",
+                      "uid": "35240-a8277c31-897e-4cf3-b27f-3afbd3ea5327"
+                    },
+                    {
+                      "id": "29759273-23e5-49da-b106-d393de1db92f",
+                      "name": "400",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"first_name\": \"John\",\n  \"last_name\": \"Smith\",\n  \"title\": \"N.P.\",\n  \"npi\": \"1245319592\",\n  \"site_id\": 45\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/prescribers/:id/update",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "prescribers",
+                            ":id",
+                            "update"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-10-22T01:25:04.000Z",
+                      "updatedAt": "2026-10-22T01:25:04.000Z",
+                      "uid": "35240-29759273-23e5-49da-b106-d393de1db92f"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T01:25:04.000Z",
+                  "updatedAt": "2026-10-22T01:25:04.000Z",
+                  "uid": "35240-7a113def-3e71-48e7-9bf0-d8a10d6e2fa2"
+                }
+              ],
+              "id": "916b7198-6eb0-48ce-a625-09016a9bc7c4",
+              "createdAt": "2026-10-22T01:25:04.000Z",
+              "updatedAt": "2026-10-22T01:25:04.000Z",
+              "uid": "35240-916b7198-6eb0-48ce-a625-09016a9bc7c4"
+            },
+            {
+              "name": "Get",
+              "id": "51115705-7b8b-433e-aa7e-20c74834141f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
                   {
                     "key": "Accept",
                     "value": "application/json"
                   }
                 ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"first_name\": \"John\",\n  \"last_name\": \"Smith\",\n  \"title\": \"N.P.\",\n  \"npi\": \"1245319592\",\n  \"site_id\": 45\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{\\n   \\\"id\\\": 234,\\n   \\\"first_name\\\": \\\"John\\\",\\n   \\\"last_name\\\": \\\"Smith\\\",\\n   \\\"title\\\": \\\"N.P.\\\",\\n   \\\"npi\\\": \\\"1245319592\\\",\\n   \\\"site_id\\\": 45\\n}\\n\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "a79aff9f-1eed-4d70-9394-6bddb6fa838e",
-              "name": "400",
-              "originalRequest": {
                 "url": {
-                  "path": [
-                    "prescribers",
-                    ":id",
-                    "update"
-                  ],
+                  "raw": "{{baseUrl}}/prescribers/:id",
                   "host": [
                     "{{baseUrl}}"
                   ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "234",
-                      "key": "id",
-                      "description": "(Required) ID of the prescriber that will be updated"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"first_name\": \"John\",\n  \"last_name\": \"Smith\",\n  \"title\": \"N.P.\",\n  \"npi\": \"1245319592\",\n  \"site_id\": 45\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "489e60df-9dc1-4d34-96cd-b727acfa72f2",
-          "name": "Get",
-          "request": {
-            "name": "Get",
-            "description": {
-              "content": "Get a prescriber object",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "prescribers",
-                ":id"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "14",
-                  "key": "id",
-                  "description": "(Required) ID of the prescriber object to get"
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "8d9b2390-542f-48a9-8f75-882ec599ae95",
-              "name": "200",
-              "originalRequest": {
-                "url": {
                   "path": [
                     "prescribers",
                     ":id"
                   ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
                   "variable": [
                     {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "14",
+                      "id": "376e03dd-5473-48ef-acae-2c786eb30e9b",
                       "key": "id",
+                      "value": "14",
                       "description": "(Required) ID of the prescriber object to get"
                     }
                   ]
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                "description": "Get a prescriber object"
               },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "response": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "\"{\\n    \\\"first_name\\\": \\\"Elizabeth\\\",\\n    \\\"id\\\": 11,\\n    \\\"last_name\\\": \\\"Blackwell\\\",\\n    \\\"npi\\\": \\\"1234567890\\\",\\n    \\\"site_id\\\": 15,\\n    \\\"title\\\": \\\"Dr.\\\"\\n}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "817d793e-f8b5-403e-80a5-5bb35d15ac3c",
-              "name": "400",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "prescribers",
-                    ":id"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "14",
-                      "key": "id",
-                      "description": "(Required) ID of the prescriber object to get"
+                  "id": "3f7a0bd6-231f-4372-b36a-f92b301cad91",
+                  "name": "200",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/prescribers/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "prescribers",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
                     }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: bearer",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Bearer <token>"
                   },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"first_name\": \"<string>\",\n  \"id\": 0,\n  \"last_name\": \"<string>\",\n  \"npi\": \"<string>\",\n  \"site_id\": 0,\n  \"title\": \"<string>\"\n}",
+                  "createdAt": "2026-10-22T01:25:04.000Z",
+                  "updatedAt": "2026-10-22T01:25:04.000Z",
+                  "uid": "35240-3f7a0bd6-231f-4372-b36a-f92b301cad91"
+                },
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
+                  "id": "911c648c-ba3f-4bde-ab17-3daf526b781e",
+                  "name": "400",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/prescribers/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "prescribers",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-10-22T01:25:04.000Z",
+                  "updatedAt": "2026-10-22T01:25:04.000Z",
+                  "uid": "35240-911c648c-ba3f-4bde-ab17-3daf526b781e"
                 }
               ],
-              "body": "\"{}\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "createdAt": "2026-10-22T01:25:04.000Z",
+              "updatedAt": "2026-10-22T01:25:04.000Z",
+              "uid": "35240-51115705-7b8b-433e-aa7e-20c74834141f"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "e427ca64-850a-416e-87aa-e820a6dbf46d",
+          "createdAt": "2026-10-22T01:25:04.000Z",
+          "updatedAt": "2026-10-22T01:25:04.000Z",
+          "uid": "35240-e427ca64-850a-416e-87aa-e820a6dbf46d"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://api.athelas.com/enterprise/v1",
-      "key": "baseUrl"
+      "id": "943ca326-8f0e-4be3-af43-3790f80c200f",
+      "createdAt": "2026-10-22T01:25:04.000Z",
+      "updatedAt": "2026-10-22T01:25:04.000Z",
+      "uid": "35240-943ca326-8f0e-4be3-af43-3790f80c200f"
     }
   ],
   "auth": {
@@ -506,17 +529,15 @@
     "bearer": [
       {
         "key": "token",
-        "value": "{{bearerToken}}"
+        "value": "{{bearerToken}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "f9cee6b7-4c1d-47b5-9028-704e6abd0ee4",
-    "name": "Athelas Enterprise Auth Prescribers API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "Athelas Enterprise Remote Patient Monitoring (RPM) API. Manage patients, sites, prescribers, RPM device shipping, and test results. Harvested verbatim from the per-operation OpenAPI blocks published on the Athelas ReadMe developer hub.",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.athelas.com/enterprise/v1"
     }
-  }
+  ]
 }
