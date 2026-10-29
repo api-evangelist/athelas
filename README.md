@@ -64,6 +64,140 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Athelas is a company surfaced as a portfolio company of general-catalyst, initialized-capital and added to the API Evangelist network as a stub for enrichment. Sector: healthcare. This profile is a lead awaiting the enrichment pipeline.
+Athelas (Commure d/b/a Athelas) is a healthcare technology company building AI-powered infrastructure for provider organizations, spanning remote patient monitoring (RPM), an AI-native EHR ("Air"), ambient AI scribing, and revenue cycle management (RCM / "Insights"). Its developer surface exposes two public APIs: the Athelas Enterprise RPM API (Bearer-token REST over api.athelas.com/enterprise/v1) for enrolling patients, managing sites and prescribers, shipping cellular-connected monitoring devices, and streaming device test results via webhook; and the Commure EHR FHIR API, an ONC (g)(10)-certified, US Core 6.1.0-compliant FHIR R4B server secured with SMART on FHIR v2 / OAuth2 for third-party app integrations with Air. Backed by General Catalyst and Initialized Capital; Athelas and Commure merged to form a multi-billion-dollar healthcare infrastructure company.
 
-Backed by: general-catalyst, initialized-capital — https://athelas.com/
+**Areas:** Company · Healthcare · Remote Patient Monitoring · Electronic Health Records · FHIR · Revenue Cycle Management · Medical Devices · SMART on FHIR · Interoperability · Artificial Intelligence
+
+## Athelas on APIs.io
+
+Everything profiled for Athelas is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/athelas/](https://apis.io/providers/athelas/)** — or go straight to one of the APIs or properties below.
+
+### APIs (6)
+
+- [Commure EHR FHIR API](https://apis.io/apis/athelas/commure-ehr-fhir-api/) — ONC (g)(10)-certified, US Core 6.1.0-compliant FHIR R4B server exposing patient health data from Air to authorized third-party apps. Secured with SMART on…
+- [Athelas Auth API](https://apis.io/apis/athelas/athelas-auth-api/) — The Auth API from Athelas — 1 operation(s) for auth.
+- [Athelas Patients API](https://apis.io/apis/athelas/athelas-patients-api/) — The Patients API from Athelas — 8 operation(s) for patients.
+- [Athelas Prescribers API](https://apis.io/apis/athelas/athelas-prescribers-api/) — The Prescribers API from Athelas — 3 operation(s) for prescribers.
+- [Athelas Sites API](https://apis.io/apis/athelas/athelas-sites-api/) — The Sites API from Athelas — 5 operation(s) for sites.
+- [Athelas Test Types API](https://apis.io/apis/athelas/athelas-test-types-api/) — The Test Types API from Athelas — 1 operation(s) for test types.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Athelas Webhooks](https://apis.io/asyncapis/athelas/athelas-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [athelas-enterprise](https://apis.io/servers/athelas/athelas-enterprise/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Athelas Agentic Access](https://apis.io/agentic-access/athelas/athelas-agentic-access/)
+
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Athelas Enterprise Auth API](https://apis.io/collections/athelas/open-athelas-auth-api/)
+- [Athelas Enterprise Auth Patients API](https://apis.io/collections/athelas/open-athelas-patients-api/)
+- [Athelas Enterprise Auth Prescribers API](https://apis.io/collections/athelas/open-athelas-prescribers-api/)
+- [Athelas Enterprise Auth Sites API](https://apis.io/collections/athelas/open-athelas-sites-api/)
+- [Athelas Enterprise Auth Test Types API](https://apis.io/collections/athelas/open-athelas-test-types-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Athelas Enterprise Overlay](https://apis.io/overlays/athelas/athelas-enterprise-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Athelas Authentication](https://apis.io/security/athelas/athelas-authentication/)
+- [Athelas Domain Security](https://apis.io/security/athelas/athelas-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Athelas Scopes](https://apis.io/scopes/athelas/athelas-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://athelas.com/)
+- [Documentation](https://docs.athelas.com/)
+- [Getting started](https://athelas.readme.io/docs/getting-started)
+- [API reference](https://athelas.readme.io/reference/login)
+- [Support](https://athelas.readme.io/discuss)
+- [Blog](https://www.athelas.com/tbh)
+- [Compliance](https://docs.athelas.com/air_developer/onc_certification/mandatory_disclosure)
+- [Terms of service](https://www.athelas.com/terms-of-use)
+- [Privacy policy](https://www.athelas.com/legal/privacy-policy-current)
+- [Status](https://status.athelas.com/)
+
+## API Evangelist rating
+
+**Kin Score 47.7** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 58.2 |
+| Contract governance | 18.2 |
+| Operational transparency | 39.5 |
+| Developer ergonomics | 48.2 |
+| Access clarity | 18.4 |
+
+**Agent readiness 29.8** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 51.5** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/athelas/](https://apis.io/providers/athelas/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Athelas: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/athelas/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
